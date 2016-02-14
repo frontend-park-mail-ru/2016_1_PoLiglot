@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
 		express: {
-			// доедлать по документации ...
+			// доделать по документации ...
 		},
 
         fest: {
@@ -32,15 +32,6 @@ module.exports = function (grunt) {
                     interrupt: true,
                     atBegin: true
                 }
-            },
-            server: {
-                files: [
-                    'public_html/js/**/*.js',
-                    'public_html/css/**/*.css'
-                ],
-                options: {
-                    livereload: true
-                }
             }
         },
         concurrent: {
@@ -55,7 +46,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-express-server');
 	grunt.loadNpmTasks('grunt-fest');
 
-
-    grunt.registerTask('default', ['concurrent']);
-
+    // результат команды grunt
+    grunt.registerTask('default', ['express', 'watch']);
 };
