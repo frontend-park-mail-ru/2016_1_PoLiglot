@@ -1,9 +1,9 @@
 {
   "name": "epicgame",
   "version": "0.1.0",
-  "description": "",
+  "description": "SSPA - Simple Single Page Application",
   "main": "index.js",
-  "author": "a.eprev@gmail.com",
+  "author": "a.mezin@corp.mail.ru",
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -13,6 +13,12 @@
     "grunt-contrib-qunit": "^0.7.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-fest": "~0.1.4",
-    "grunt-shell": "^1.1.1"
+    "grunt-shell": "^1.1.1",
+    "body-parser": "^1.14.2",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4"
+  },
+  "scripts": {
+    "start": "node server"
   }
 }
