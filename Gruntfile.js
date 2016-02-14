@@ -1,15 +1,11 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-        shell: {
-            options: {
-                stdout: true,
-                stderr: true
-            },
-            server: {
-                command: 'java -cp L1.2-1.0-jar-with-dependencies.jar main.Main 8080'
-            }
-        },
+
+		express: {
+			// доедлать по документации ...
+		},
+
         fest: {
             templates: {
                 files: [{
@@ -48,17 +44,17 @@ module.exports = function (grunt) {
             }
         },
         concurrent: {
-            target: ['watch', 'shell'],
-            options: {
-                logConcurrentOutput: true
-            }
+			// сделать так, чтобы работало два таск одновременно
         }
     });
 
+
+	// подключть все необходимые модули
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
-    grunt.loadNpmTasks('grunt-shell');
-    grunt.loadNpmTasks('grunt-fest');
+	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-fest');
+
 
     grunt.registerTask('default', ['concurrent']);
 
