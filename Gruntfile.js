@@ -3,15 +3,23 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
 		shell: {
+			dev:{
+				command:'node server.js'
+			}
 			// запуск сервера через скрипт shell'a https://www.npmjs.com/package/grunt-shell
 		},
 
 		watch: {
+			xml:{
+				files:['templates/*.xml'],
+				tasks:['fest']
+			}
 			// запуск watcher'a, который следит за изенениями файлов  templates/*.xml
 			// и если они изменяются, то запускает таск сборки шаблонов (grunt fest)
 		},
 		
 		concurrent: {
+			tasks:['shell','watch']
 			// одновременный запуска shell'a и watcher'a https://www.npmjs.com/package/grunt-concurrent
 		},
 
@@ -43,5 +51,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-fest');
 
     // результат команды grunt
-    grunt.registerTask('default', ['shell', 'watch']);
+    grunt.registerTask('default', ['concurrent:target']);
 };
