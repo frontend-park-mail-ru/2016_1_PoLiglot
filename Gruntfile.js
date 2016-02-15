@@ -2,8 +2,8 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
-		express: {
-			// запуск express'a https://www.npmjs.com/package/grunt-express-server
+		shell: {
+			// запуск сервера через скрипт shell'a https://www.npmjs.com/package/grunt-shell
 		},
 
 		watch: {
@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 		},
 		
 		concurrent: {
-			// одновременный запуска express'a и watcher'a https://www.npmjs.com/package/grunt-concurrent
+			// одновременный запуска shell'a и watcher'a https://www.npmjs.com/package/grunt-concurrent
 		},
 
 		fest: {
@@ -39,9 +39,9 @@ module.exports = function (grunt) {
 	// подключть все необходимые модули
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
-	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-fest');
 
     // результат команды grunt
-    grunt.registerTask('default', ['express', 'watch']);
+    grunt.registerTask('default', ['shell', 'watch']);
 };
