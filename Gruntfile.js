@@ -51,5 +51,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-fest');
 
     // результат команды grunt
-    grunt.registerTask('default', ['concurrent:target']);
+    grunt.registerTask('default', ['concurrent:tasks']);
 };
