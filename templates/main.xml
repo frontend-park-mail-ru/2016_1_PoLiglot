@@ -1,3 +1,4 @@
-<fest:template xmlns:fest="http://fest.mail.ru">
-    <div id="main"><h1>privet fest</h1></div>
+
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+
 </fest:template>
