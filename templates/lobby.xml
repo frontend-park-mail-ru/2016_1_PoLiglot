@@ -1,0 +1,25 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+	<div class="col-md-2">	
+	</div>
+	<div id="main" class="col-md-8">
+		<div class="main-menu">
+			<div id="fountainG">
+				<div id="fountainG_1" class="fountainG"></div>
+				<div id="fountainG_2" class="fountainG"></div>
+				<div id="fountainG_3" class="fountainG"></div>
+				<div id="fountainG_4" class="fountainG"></div>
+				<div id="fountainG_5" class="fountainG"></div>
+				<div id="fountainG_6" class="fountainG"></div>
+				<div id="fountainG_7" class="fountainG"></div>
+				<div id="fountainG_8" class="fountainG"></div>
+			</div>
+			<div></div>
+			<div></div>
+		</div>
+		<hr/>
+		<a href="#"><button class="btn btn-primary main-form__button"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Вернуться в меню</button></a>
+		<a href="#game"><button class="btn btn-primary main-form__button__forward"> Начать игру<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></button></a>
+	</div>
+	<div class="col-md-2">
+	</div>
+</fest:template>
