@@ -19,7 +19,7 @@ define([
         },
         show: function () {
             $('#page').html(this.render().$el);// TODO
-            this.$('#main').fadeIn("slow");// TODO
+            this.$('.main').fadeIn("slow");// TODO
         },
         hide: function () {
             // TODO

@@ -18,7 +18,7 @@ define([
         },
         show: function () {
             $('#page').html(this.render().$el);// TODO
-            this.$('#main').fadeIn("slow");
+            this.$('.main').fadeIn("slow");
         },
         hide: function () {
             $('#page').html(this.render().$el);

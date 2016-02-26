@@ -6,7 +6,7 @@ define([
     tmpl
 
 ){
-    var lobbyView = Backbone.View.extend({
+    var LobbyView = Backbone.View.extend({
         template: tmpl,
         initialize: function () {
             $('#page').html(tmpl());// TODO
@@ -17,7 +17,9 @@ define([
         },
         show: function () {
             $('#page').html(this.render().$el);// TODO
-            this.$('#main').fadeIn("slow");// TODO
+            this.$('.main').fadeIn("slow");
+            this.$('..main-form__button__forward').removeAttr("disabled",true);
+            this.$('.lobby__title').fadeIn("slow");// TODO
         },
         hide: function () {
             // TODO
@@ -25,5 +27,5 @@ define([
 
     });
 
-    return new lobbyView();
+    return new LobbyView();
 });

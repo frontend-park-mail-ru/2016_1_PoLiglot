@@ -21,11 +21,11 @@ define([
         },
         show: function () {
             $('#page').html(this.render().$el);// TODO
-            this.$('#main').fadeIn("slow");
+            this.$('.main').fadeIn("slow");
             this.$('.main-menu__button').show("slow");
             this.$el.find('.main-menu__button').on('click', function (event) {
                this.$('.main-menu__button').fadeOut("slow");
-                this.$('#main').hide("slow"); 
+                this.$('.main').hide("slow"); 
             });
         },
         hide: function () {

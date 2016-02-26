@@ -4,19 +4,22 @@ define([
 ], function(
     Backbone,
     tmpl
+
 ){
-
-    var View = Backbone.View.extend({
-
+    var GameView = Backbone.View.extend({
         template: tmpl,
         initialize: function () {
-            // TODO
+            $('#page').html(tmpl());// TODO
         },
         render: function () {
-            // TODO
+            this.$el.html(tmpl());
+            return this;
         },
         show: function () {
-            // TODO
+            $('#page').html(this.render().$el);// TODO
+            this.$('.main').fadeIn("slow");
+            this.$('..main-form__button__forward').removeAttr("disabled",true);
+            this.$('.lobby__title').fadeIn("slow");// TODO
         },
         hide: function () {
             // TODO
@@ -24,5 +27,5 @@ define([
 
     });
 
-    return new View();
+    return new GameView();
 });
