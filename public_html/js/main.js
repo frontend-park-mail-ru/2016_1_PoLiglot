@@ -17,7 +17,7 @@ require.config({
     }
 });
 
-define([
+require([
     'backbone',
     'router'
 ], function(
