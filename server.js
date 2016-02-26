@@ -25,7 +25,7 @@ app.listen(PORT, function () {
 });
 
 
-app.use('/proxy', proxy('http://vk.com', {
+app.use('/proxy', proxy('http://rutracker.org', {
 	forwardPath: function(req, res) {
 		console.log(1234);
 		return require('url').parse(req.url).path;
