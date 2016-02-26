@@ -1,28 +1,32 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 	<div class="col-md-2">	
 	</div>
-	<div id="main" class="col-md-8">
+	<div class="main col-md-8">
 		<div class="main-form">
-	<h2 class="main-form__h2">Рекорды</h2>
-	<hr />
-	<div class="record-list">
-		<table class="record-list__table">
-			<tr>
-				<td class="record-list__table__td__login__header">Логин игрока:</td>
-				<td class="record-list__table__td__score__header">Результат:</td>
-			</tr>
-		<fest:each iterate="json.collection" index="i" value="player"> 
-			<tr>      
-				<td class="record-list__table__td__login"><fest:value output="text">player.name</fest:value></td>
-				<td class="record-list__table__td__score"><fest:value output="text">player.score</fest:value></td>
-			</tr>		
-		</fest:each>
-	</table> 
+			<h2 class="main-form__h2">Рекорды</h2>
+			<hr />
+			<div class="record-list">
+				<table class="record-list__table">
+					<tr>
+						<td class="record-list__table__td__login__header">Логин игрока:</td>
+						<td class="record-list__table__td__score__header">Результат:</td>
+					</tr>
+					<fest:each iterate="json.collection" index="i" value="player"> 
+					<tr>      
+						<td class="record-list__table__td__login"><fest:value output="text">player.name</fest:value></td>
+						<td class="record-list__table__td__score"><fest:value output="text">player.score</fest:value></td>
+					</tr>		
+					</fest:each>
+				</table> 
+			</div>
+			<hr/>
+			<a href="#">
+				<button class="btn btn-primary main-form__button">
+					<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Назад
+				</button>
+			</a>
+		</div>
 	</div>
-	<hr/>
-	<a href="#"><button class="btn btn-primary main-form__button"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Назад</button></a>
-	</div>
-</div>
 	<div class="col-md-2">
 	</div>
 </fest:template>

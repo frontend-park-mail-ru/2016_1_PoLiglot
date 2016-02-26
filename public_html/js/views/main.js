@@ -6,23 +6,35 @@ define([
     tmpl
 ){
 
-    var View = Backbone.View.extend({
-
-        template: tmpl,
+    var mainView = Backbone.View.extend({
+        
+    	template: tmpl,
+        events: {
+            "click .main-menu__button" : "hide"
+        },
         initialize: function () {
-            // TODO
+            $('#page').html(tmpl());// TODO
         },
         render: function () {
-            // TODO
+            this.$el.html(tmpl());
+            return this;
         },
         show: function () {
-            // TODO
+            $('#page').html(this.render().$el);// TODO
+            this.$('#main').fadeIn("slow");
+            this.$('.main-menu__button').show("slow");
+            this.$el.find('.main-menu__button').on('click', function (event) {
+               this.$('.main-menu__button').fadeOut("slow");
+                this.$('#main').hide("slow"); 
+            });
         },
         hide: function () {
-            // TODO
+            $('#page').html(this.render().$el);
+            this.$('.main-menu__button').fadeOut("slow");
+            this.$('#main').hide("slow");
         }
 
     });
 
-    return new View();
+    return new mainView();
 });

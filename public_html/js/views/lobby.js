@@ -1,20 +1,18 @@
 define([
     'backbone',
-    'tmpl/scoreboard',
-    'collections/scores'
+    'tmpl/lobby'
 ], function(
     Backbone,
-    tmpl,
-    players
+    tmpl
 
 ){
-    var scoreboardView = Backbone.View.extend({
+    var lobbyView = Backbone.View.extend({
         template: tmpl,
         initialize: function () {
-            $('#page').html(tmpl({collection: players.toJSON()}));// TODO
+            $('#page').html(tmpl());// TODO
         },
         render: function () {
-            this.$el.html(tmpl({collection: players.toJSON()}));
+            this.$el.html(tmpl());
             return this;
         },
         show: function () {
@@ -27,5 +25,5 @@ define([
 
     });
 
-    return new scoreboardView();
+    return new lobbyView();
 });

@@ -1,12 +1,12 @@
 define([
     'backbone',
-    'tmpl/login'
+    'tmpl/registration'
 ], function(
     Backbone,
     tmpl
 ){
 
-    var loginView = Backbone.View.extend({
+    var registrationView = Backbone.View.extend({
 
         template: tmpl,
         initialize: function () {
@@ -14,19 +14,17 @@ define([
         },
         render: function () {
             this.$el.html(tmpl());
-            return this; // TODO
+            return this;// TODO
         },
         show: function () {
             $('#page').html(this.render().$el);// TODO
-            this.$('#main').fadeIn("slow");
+            this.$('#main').fadeIn("slow");  // TODO
         },
         hide: function () {
-            $('#page').html(this.render().$el);
-            this.$('.main-menu__button').hide("slow");
-            this.$('#main').fadeOut("slow"); // TODO
+            $('#page').html(tmpl()); // TODO
         }
 
     });
 
-    return new loginView();
+    return new registrationView();
 });

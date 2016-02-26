@@ -1,14 +1,21 @@
-
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 	<div class="col-md-2">	
 	</div>
-	<div id="main" class="col-md-8">
+	<div class="main col-md-8">
 		<div class="main-menu">
 			<h2 class="main-menu__h2">PoLiglot 1.0</h2>
-			<a href="#login"><button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Войти</button></a>
-			<a href="#lobby"><button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Играть</button></a>
-			<a href="#signup"><button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Зарегистрироваться</button></a>
-			<a href="#scoreboard"><button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Рекорды</button></a>
+			<a href="#login">
+				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Войти</button>
+			</a>
+			<a href="#lobby">
+				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Играть</button>
+			</a>
+			<a href="#signup">
+				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Зарегистрироваться</button>
+			</a>
+			<a href="#scoreboard">
+				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Рекорды</button>
+			</a>
 		</div>
 	</div>
 	<div class="col-md-2">
