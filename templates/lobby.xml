@@ -4,7 +4,17 @@
 	<div class="main col-md-8">
 		<div class="main-menu">
 			<div>
-				<p class="lobby__title">Игровое поле</p>
+				<p class="lobby__title">Поиск игры</p>
+			</div>
+			<div id="fountainG">
+				<div id="fountainG_1" class="fountainG"></div>
+				<div id="fountainG_2" class="fountainG"></div>
+				<div id="fountainG_3" class="fountainG"></div>
+				<div id="fountainG_4" class="fountainG"></div>
+				<div id="fountainG_5" class="fountainG"></div>
+				<div id="fountainG_6" class="fountainG"></div>
+				<div id="fountainG_7" class="fountainG"></div>
+				<div id="fountainG_8" class="fountainG"></div>
 			</div>
 			<div></div>
 			<div></div>
