@@ -13,7 +13,7 @@ define([
         }
     });
 
-    var players = new ScoreCollection([
+    return new ScoreCollection([
     	{name: 'Stepan123', score: 16},
     	{name: 'IGORR', score: 1.4},
     	{name: 'Dmitr55343', score: 33},
@@ -24,6 +24,4 @@ define([
     	{name: 'Eddy1986', score: 0},
     	{name: 'gamefun', score: 0}
     ]);
-
-    return players;
 });

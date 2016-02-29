@@ -93,7 +93,7 @@ label{
 	margin-top: 2%;
 }
 .record-list{
-	background-image: url(blue-line.svg), url(red-line.svg); 
+	background-image: url(../img/blue-line.svg), url(../img/red-line.svg); 
     background-size: 100vw 30px, 32px 32px;
     background-repeat: repeat, repeat-y;
     background-position: 0 0, 364px 0;
