@@ -23,6 +23,12 @@ define([
             this.$passRepeat = this.$("input[name=password_repeat]");
             this.$email = this.$("input[name=email]");
             this.$error = this.$(".error");
+            this.$errorAlert = this.$(".error-alert");
+            this.$emptyField = this.$(".empty-field");
+            this.$littlePass = this.$(".little-pass");
+            this.$invalidMail = this.$(".invalid-mail");
+            this.$invalidLogin = this.$(".invalid-login");
+            this.$passCompare = this.$(".pass-compare");
             return this; // TODO"
         },
         show: function () {
@@ -31,11 +37,12 @@ define([
         },
         send: function(event){
             event.preventDefault();
+            this.$errorAlert.fadeOut('fast');
             this.$error.fadeOut('fast');
 
             if(!this.$name.val() || !this.$pass.val() || !this.$passRepeat.val() || !this.$email){
                 this.$error.fadeIn('fast');
-                this.$error.html('<strong>Ой! </strong>Выделенные поля не заполнены!');
+                this.$emptyField.fadeIn('fast');
                 return;
             }
             var email = this.$email.val();
@@ -45,24 +52,23 @@ define([
 
             if(pass.length < 8 ){
                 this.$error.fadeIn('fast');
-                this.$error.html('<strong>Ой! </strong> Пароль состоит менее чем из 8 символов!');
-                this.$pass.parent('.form-group').addClass('has-error');
+                this.$littlePass.fadeIn('fast');
                 return;
             }
             if(!/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email)){
                 this.$error.fadeIn('fast');
-                this.$error.html('<strong>Ой! </strong> E-mail введён некорректно!');
+                this.$invalidMail.fadeIn('fast');
                 return;
             }
             if(!/\w/.test(pass) || !/\w/.test(name)){
                 this.$error.fadeIn('fast');
-                this.$error.html('<strong>Ой! </strong> Пароль и Логин может содержать символы: A-Z a-z 0-9!');
+                this.$invalidLogin('fast');
                 return;
             }
 
-            if(pass = passRepeat){
+            if(pass != passRepeat){
                 this.$error.fadeIn('fast');
-                this.$error.html('<strong>Ой! </strong> Пароли не совпадают');
+                this.$passCompare.fadeIn('fast');
                 return;
             }
 

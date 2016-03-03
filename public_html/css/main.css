@@ -125,7 +125,9 @@ label{
 	display:none;
 }
 
-
+.error-alert{
+	display: none;
+}
 
 
 
