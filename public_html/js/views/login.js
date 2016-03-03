@@ -21,6 +21,8 @@ define([
             this.$name = this.$("input[name=login]");
         	this.$pass = this.$("input[name=password]");
             this.$error = this.$('.error');
+            this.$errorAlert = this.$(".error-alert");
+            this.$emptyField = this.$(".empty-field");
             return this; // TODO
         },
         show: function () {
@@ -34,11 +36,13 @@ define([
         },
         send: function(event){
         	event.preventDefault();
+            this.$errorAlert.fadeOut('fast');
         	this.$error.fadeOut('fast');
 
         	if(!this.$name.val() || !this.$pass.val()){
         		this.$error.fadeIn('fast');
-                this.$error.html('<strong>Ой!</strong>Поля логина или пороля не заполнены!');
+                this.$emptyField.fadeIn('fast');
+                
                 return;
             }
 
