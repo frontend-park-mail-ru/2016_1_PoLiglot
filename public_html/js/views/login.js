@@ -34,7 +34,7 @@ define([
         },
         send: function(event){
         	event.preventDefault();
-        	this.$('.error').fadeOut('fast');
+        	this.$error.fadeOut('fast');
 
         	if(!this.$name.val() || !this.$pass.val()){
         		this.$error.fadeIn('fast');

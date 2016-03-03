@@ -31,11 +31,11 @@ define([
         },
         send: function(event){
             event.preventDefault();
-            this.$('.error').fadeOut('fast');
+            this.$error.fadeOut('fast');
 
             if(!this.$name.val() || !this.$pass.val() || !this.$passRepeat.val() || !this.$email){
-                this.$('.error').fadeIn('fast');
-                this.$('.error').html('<strong>Ой! </strong>Выделенные поля не заполнены!');
+                this.$error.fadeIn('fast');
+                this.$error.html('<strong>Ой! </strong>Выделенные поля не заполнены!');
                 return;
             }
             var email = this.$email.val();
