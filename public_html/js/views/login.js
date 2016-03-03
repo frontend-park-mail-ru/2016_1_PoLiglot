@@ -20,6 +20,7 @@ define([
             this.$el.html(tmpl());
             this.$name = this.$("input[name=login]");
         	this.$pass = this.$("input[name=password]");
+            this.$error = this.$('.error');
             return this; // TODO
         },
         show: function () {
@@ -36,8 +37,8 @@ define([
         	this.$('.error').fadeOut('fast');
 
         	if(!this.$name.val() || !this.$pass.val()){
-        		this.$('.error').fadeIn('fast');
-                this.$('.error').html('<strong>Ой!</strong>Поля логина или пороля не заполнены!');
+        		this.$error.fadeIn('fast');
+                this.$error.html('<strong>Ой!</strong>Поля логина или пороля не заполнены!');
                 return;
             }
 

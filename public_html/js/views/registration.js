@@ -22,7 +22,8 @@ define([
             this.$pass = this.$("input[name=password]");
             this.$passRepeat = this.$("input[name=password_repeat]");
             this.$email = this.$("input[name=email]");
-            return this; // TODO
+            this.$error = this.$(".error");
+            return this; // TODO"
         },
         show: function () {
             $('#page').html(this.render().$el);// TODO
@@ -43,25 +44,25 @@ define([
             var passRepeat = this.$passRepeat.val();
 
             if(pass.length < 8 ){
-                this.$('.error').fadeIn('fast');
-                this.$('.error').html('<strong>Ой! </strong> Пароль состоит менее чем из 8 символов!');
+                this.$error.fadeIn('fast');
+                this.$error.html('<strong>Ой! </strong> Пароль состоит менее чем из 8 символов!');
                 this.$pass.parent('.form-group').addClass('has-error');
                 return;
             }
             if(!/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email)){
-                this.$('.error').fadeIn('fast');
-                this.$('.error').html('<strong>Ой! </strong> E-mail введён некорректно!');
+                this.$error.fadeIn('fast');
+                this.$error.html('<strong>Ой! </strong> E-mail введён некорректно!');
                 return;
             }
             if(!/\w/.test(pass) || !/\w/.test(name)){
-                this.$('.error').fadeIn('fast');
-                this.$('.error').html('<strong>Ой! </strong> Пароль и Логин может содержать символы: A-Z a-z 0-9!');
+                this.$error.fadeIn('fast');
+                this.$error.html('<strong>Ой! </strong> Пароль и Логин может содержать символы: A-Z a-z 0-9!');
                 return;
             }
 
             if(pass = passRepeat){
-                this.$('.error').fadeIn('fast');
-                this.$('.error').html('<strong>Ой! </strong> Пароли не совпадают');
+                this.$error.fadeIn('fast');
+                this.$error.html('<strong>Ой! </strong> Пароли не совпадают');
                 return;
             }
 
