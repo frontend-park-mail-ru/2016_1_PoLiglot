@@ -1,3 +1,18 @@
+@font-face{
+	font-family: Segoe Print; /* имя шрифта для CSS правил */
+	src: local("Segoe Print"), /* проверяем наличие шрифта в ОС пользователя */
+    url(fonts/Segoe-Print.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+@font-face{
+	font-family: WhisperWrite; /* имя шрифта для CSS правил */
+	src: local("WhisperWrite"), /* проверяем наличие шрифта в ОС пользователя */
+    url(fonts/WhisperWrite_Medium.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+@font-face{
+	font-family: a_AlbionicTitulInfl; /* имя шрифта для CSS правил */
+	src: local("a_AlbionicTitulInfl"), /* проверяем наличие шрифта в ОС пользователя */
+    url(fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
 body{
 	padding-top:2%;
 	padding-bottom:2%;
@@ -7,7 +22,7 @@ body{
 	text-align: center;
 	font-weight: bold;
 	font-size: 80px;
-	font-family: 'WhisperWrite';
+	font-family: WhisperWrite;
 }
 li{
 	text-align: center;
@@ -24,7 +39,7 @@ li{
 	text-align: center;
 	font-weight: bold;
 	font-size: 60px;
-	font-family: 'a_AlbionicTitulInfl';
+	font-family: a_AlbionicTitulInfl;
 }
 .main-menu__button__text{
 	font-family: 'Boomboom';
@@ -33,30 +48,30 @@ li{
 
 }
 .record-list__table__td__login{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 	font-size: 20px;
 	width: 77%;
 }
 .record-list__table__td__score{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 	font-size: 20px;
 }
 .record-list__table__td__login__header{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 	font-size: 20px;
 	width: 77%;
 	text-decoration: underline;
 }
 .record-list__table__td__score__header{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 	font-size: 20px;
 	text-decoration:underline;
 }
 input[type="text"]{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 }
 label{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 }
 .main{
 	box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -73,21 +88,21 @@ label{
 .main-menu__button{
 	display:none;
 	margin-top:5%;
-	font-family: 'a_AlbionicTitulInfl';
+	font-family: a_AlbionicTitulInfl;
 	box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 .main-form__button__forward{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 	float:right;
 }
 .main-form__submit{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 }
 .main-form__button{
-	font-family: 'Segoe Print';
+	font-family: Segoe Print;
 }
 .lobby__title{
-	font-family: 'a_AlbionicTitulInfl';
+	font-family: a_AlbionicTitulInfl;
 	text-align:center;
 	font-size: 20px;
 	margin-top: 2%;
@@ -104,9 +119,11 @@ label{
 };
 .record_list__p{
 	font-size: 1.8em;
-	font-family: 'Segoe Print' !important;
+	font-family: Segoe Print;
 } 
-
+.error{
+	display:none;
+}
 
 
 
