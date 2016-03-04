@@ -1,17 +1,17 @@
 @font-face{
 	font-family: Segoe Print; /* имя шрифта для CSS правил */
 	src: local("Segoe Print"), /* проверяем наличие шрифта в ОС пользователя */
-    url(fonts/Segoe-Print.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    url(../fonts/Segoe-Print.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
 @font-face{
 	font-family: WhisperWrite; /* имя шрифта для CSS правил */
 	src: local("WhisperWrite"), /* проверяем наличие шрифта в ОС пользователя */
-    url(fonts/WhisperWrite_Medium.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    url(../fonts/WhisperWrite_Medium.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
 @font-face{
 	font-family: a_AlbionicTitulInfl; /* имя шрифта для CSS правил */
 	src: local("a_AlbionicTitulInfl"), /* проверяем наличие шрифта в ОС пользователя */
-    url(fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    url(../fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
 body{
 	padding-top:2%;
