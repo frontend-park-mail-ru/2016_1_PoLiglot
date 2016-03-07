@@ -11,7 +11,7 @@
 		</div>
 		<hr/>
 		<a href="#">
-			<button class="btn btn-primary main-form__button">
+			<button class="btn btn-primary js-main-form__button">
 				<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Вернуться в меню
 			</button>
 		</a>

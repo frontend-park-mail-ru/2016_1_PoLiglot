@@ -5,12 +5,12 @@
     <div class="main-form">
       <h2 class="main-form__h2">Регистрация</h2>
       <hr />
-      <div class="alert alert-danger error" role="alert">
-        <p class="error-alert empty-field"><strong>Ой! </strong>Некоторые поля не заполнены!</p>
-        <p class="error-alert little-pass"><strong>Ой! </strong> Пароль состоит менее чем из 8 символов!</p>
-        <p class="error-alert invalid-mail"><strong>Ой! </strong> E-mail введён некорректно!</p>
-        <p class="error-alert invalid-login"><strong>Ой! </strong> Пароль и Логин может содержать символы: A-Z a-z 0-9!</p>
-        <p class="error-alert pass-compare"><strong>Ой! </strong> Пароли не совпадают</p>
+      <div class="alert alert-danger js-error" role="alert">
+        <div class="js-error-alert js-empty-field"><strong>Ой! </strong>Некоторые поля не заполнены!</div>
+        <div class="js-error-alert js-little-pass"><strong>Ой! </strong> Пароль состоит менее чем из 8 символов!</div>
+        <div class="js-error-alert js-invalid-mail"><strong>Ой! </strong> E-mail введён некорректно!</div>
+        <div class="js-error-alert js-invalid-login"><strong>Ой! </strong> Пароль и Логин может содержать символы: A-Z a-z 0-9!</div>
+        <div class="js-error-alert js-pass-compare"><strong>Ой! </strong> Пароли не совпадают</div>
       </div> 
       <form class="form-horizontal">
           <div class="form-group">
@@ -45,7 +45,7 @@
       </form>
       <hr/>
       <a href="#">
-        <button class="btn btn-primary main-form__button">
+        <button class="btn btn-primary js-main-form__button">
           <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Назад
         </button>
       </a>

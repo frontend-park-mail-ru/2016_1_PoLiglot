@@ -5,16 +5,16 @@
 		<div class="main-menu">
 			<h2 class="main-menu__h2">PoLiglot 1.0</h2>
 			<a href="#login" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Войти</button>
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Войти</button>
 			</a>
 			<a href="#lobby" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Играть</button>
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Играть</button>
 			</a>
 			<a href="#signup" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Зарегистрироваться</button>
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Зарегистрироваться</button>
 			</a>
 			<a href="#scoreboard" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block main-menu__button">Рекорды</button>
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Рекорды</button>
 			</a>
 		</div>
 	</div>
