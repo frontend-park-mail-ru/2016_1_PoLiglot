@@ -23,13 +23,8 @@ define([
         show: function () {
             $('#page').html(this.render().$el);// TODO
             this.$('.main').fadeIn("slow");
-            this.$('.main-menu__button').show("slow");
+            this.$('.js-main-menu__button').show("slow");
         },
-        hide: function () {
-        	$('#page').html(this.render().$el);
-            this.$('.main-menu__button').fadeOut("slow");
-            this.$('#main').hide("slow");
-        }
     });
 
     return new mainView();

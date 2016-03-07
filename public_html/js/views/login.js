@@ -1,9 +1,11 @@
 define([
     'backbone',
-    'tmpl/login'
+    'tmpl/login',
+    'models/session'
 ], function(
     Backbone,
-    tmpl
+    tmpl,
+    session
 ){
 
     var loginView = Backbone.View.extend({
@@ -13,41 +15,43 @@ define([
             submit: "send"
         },
         initialize: function () {
-            $('#page').html(tmpl());
-              // TODO
+
         },
         render: function () {
             this.$el.html(tmpl());
             this.$name = this.$("input[name=login]");
-        	this.$pass = this.$("input[name=password]");
-            this.$error = this.$('.error');
-            this.$errorAlert = this.$(".error-alert");
-            this.$emptyField = this.$(".empty-field");
-            return this; // TODO
+            this.$pass = this.$("input[name=password]");
+            this.$error = this.$('.js-error');
+            return this;
         },
         show: function () {
-            $('#page').html(this.render().$el);// TODO
-            this.$('.main').fadeIn("slow");
-        },
-        hide: function () {
             $('#page').html(this.render().$el);
-            this.$('.main-menu__button').hide("slow");
-            this.$('.main').fadeOut("slow"); // TODO
+            this.$('.main').fadeIn("slow");
         },
         send: function(event){
         	event.preventDefault();
-            this.$errorAlert.fadeOut('fast');
-        	this.$error.fadeOut('fast');
-
-        	if(!this.$name.val() || !this.$pass.val()){
-        		this.$error.fadeIn('fast');
-                this.$emptyField.fadeIn('fast');
-                
-                return;
-            }
-
+            this.$error.fadeOut('fast');
             var name = this.$name.val();
             var pass = this.$pass.val();
+            var valid = session.isValidLogin(name,pass);
+
+        	if(valid == 'success'){
+                session.login(name,pass);
+        		$(window).ajaxError(function() {
+                        $('.js-error').text("404 Not Found").show("fast");
+                });
+                $(window).ajaxSuccess(
+                    function() {
+                        Backbone.history.navigate('game', { trigger: true })
+                });
+                
+            }
+            else {
+                this.$error.fadeIn('fast');
+                this.$(valid).fadeIn('fast');
+            }
+
+            
 
         }
 
