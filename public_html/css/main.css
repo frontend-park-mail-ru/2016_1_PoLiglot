@@ -16,6 +16,7 @@
 body{
 	padding-top:2%;
 	padding-bottom:2%;
+	background:url(../img/background-image.jpg);
 }
 .main-menu__h2{
 	color:black;
@@ -85,7 +86,7 @@ label{
 	display:none;
 		
 }
-.main-menu__button{
+.js-main-menu__button{
 	display:none;
 	margin-top:5%;
 	font-family: a_AlbionicTitulInfl;
@@ -98,7 +99,7 @@ label{
 .main-form__submit{
 	font-family: Segoe Print;
 }
-.main-form__button{
+.js-main-form__button{
 	font-family: Segoe Print;
 }
 .lobby__title{
@@ -121,11 +122,11 @@ label{
 	font-size: 1.8em;
 	font-family: Segoe Print;
 } 
-.error{
+.js-error{
 	display:none;
 }
 
-.error-alert{
+.js-error-alert{
 	display: none;
 }
 
