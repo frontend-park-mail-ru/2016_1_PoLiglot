@@ -7,6 +7,6 @@ define(function(require) {
                 return -model.score;
             });
 
-        QUnit.ok(_.isEqual(scores, scoresSorted), 'Returned array is sorted');
+        QUnit.ok(_.isEqual(scores, scoresSorted), 'Массив отсортирован!');
     });
 });
