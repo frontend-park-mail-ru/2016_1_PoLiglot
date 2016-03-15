@@ -1,18 +1,12 @@
-define(function (require) {
-    QUnit.module("models/score");
+define(function(require) {
+    QUnit.module('collections/scores');
 
-    QUnit.test('Check sorted collection', function() {
-        var ScoresCollection = require('./scores');
+    QUnit.test('Проверка сортировки коллекции', function () {
+        var scores = require('collections/scores').toJSON(),
+            scoresSorted = _.sortBy(scores, function (model) {
+                return -model.score;
+            });
 
-        var result = true;
-
-        for (var i = 0; i < ScoresCollection.length; i++) {
-            if (ScoresCollection[i].score > ScoresCollection[i+1].score) {
-                result = false;
-            }
-        }
-
-        assert.equal( result, true );
+        QUnit.ok(_.isEqual(scores, scoresSorted), 'Массив отсортирован!');
     });
-
 });
