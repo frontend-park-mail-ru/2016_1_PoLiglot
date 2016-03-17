@@ -43,7 +43,7 @@ define([
             var valid = session.isValidRegistration(email, name, pass, passRepeat);
 
             if (valid == 'success'){
-            	session.registration(email,name,pass);
+            	session.registration(name,pass,email);
             	$(window).ajaxError(function() {
                         $('.js-error').text("404 Not Found").show("fast");
                 });

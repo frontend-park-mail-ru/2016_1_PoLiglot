@@ -57,6 +57,16 @@ define([
                     password: pass,
                     email: email
                 }),
+                success: function (data) {
+                    if (data.status === 0) {
+                        alert(data);
+                    } else {
+                        alert("error");
+                    }
+                },
+                error: function () {
+                    alert("error");
+                }
             });
         },
 
