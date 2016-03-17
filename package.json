@@ -19,6 +19,7 @@
     "express": "^4.13.4"
   },
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "test": "grunt test"
   }
 }
