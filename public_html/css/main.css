@@ -78,7 +78,7 @@ label{
 	box-shadow: 0 0 20px rgba(0,0,0,0.5);
 	background-color:#FFFFFF;
 	top: 10%;
-	padding-bottom: 2%;
+	padding-bottom: 5%;
 	padding-right: 5%;
 	padding-left: 5%;
 	border-radius: 4px;
@@ -86,20 +86,20 @@ label{
 	display:none;
 		
 }
-.js-main-menu__button{
-	display:none;
+.main-menu__button{
+	display: none;
 	margin-top:5%;
 	font-family: a_AlbionicTitulInfl;
 	box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-.main-form__button__forward{
+.form__button__forward{
 	font-family: Segoe Print;
 	float:right;
 }
 .main-form__submit{
 	font-family: Segoe Print;
 }
-.js-main-form__button{
+.main-form__button{
 	font-family: Segoe Print;
 }
 .lobby__title{
@@ -122,14 +122,21 @@ label{
 	font-size: 1.8em;
 	font-family: Segoe Print;
 } 
-.js-error{
+.error{
 	display:none;
 }
 
-.js-error-alert{
+.error-alert{
 	display: none;
 }
 
+.lobby{
+	display: none;
+}
+
+.quit{
+	display: none;
+}
 
 
 
