@@ -4,17 +4,22 @@
 	<div class="main col-md-8">
 		<div class="main-menu">
 			<h2 class="main-menu__h2">PoLiglot 1.0</h2>
-			<a href="#login" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Войти</button>
+			<a href="#login" class="main-menu-link js-signin">
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-guest">Войти</button>
 			</a>
-			<a href="#lobby" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Играть</button>
+			<a href="#lobby" class="main-menu-link ">
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-noguest">Играть</button>
 			</a>
-			<a href="#signup" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Зарегистрироваться</button>
+			<a href="#signup" class="main-menu-link js-signup">
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-guest">Зарегистрироваться</button>
 			</a>
 			<a href="#scoreboard" class="main-menu-link">
-				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button">Рекорды</button>
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-guest js-noguest">Рекорды</button>
+			</a>
+			<a href="#" class="main-menu-link ">
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-noguest ">
+					Выйти
+				</button>
 			</a>
 		</div>
 	</div>
