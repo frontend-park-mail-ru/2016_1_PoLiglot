@@ -28,14 +28,10 @@ define([
         },
 
         isLoggedIn: function() {
-            $.ajax({
+            return this.save({}, {
                 type: 'GET',
-                url: this.urlLogin,
-                success: function (data) {
-                },
-                error: function(data) {
-                }
-
+                wait: true,
+                url: this.urlLogin
             });
         },
 
@@ -57,21 +53,11 @@ define([
                     password: pass,
                     email: email
                 }),
-                success: function (data) {
-                    if (data.status === 0) {
-                        alert(data);
-                    } else {
-                        alert("error");
-                    }
-                },
-                error: function () {
-                    alert("error");
-                }
             });
         },
 
-        isValidLogin: function(name, pass) {
-            var errors = '.empty-field';
+        ValidLogin: function(name, pass) {
+            var errors = 'empty-field';
             var success = 'success';
             if (name && pass) {
                 return success;
@@ -79,9 +65,9 @@ define([
             else return errors;
         },
 
-        isValidRegistration: function(email, name, pass, passRepeat) {
+        ValidRegistration: function(email, name, pass, passRepeat) {
             var errors = [
-                '.js-invalid-mail','.js-empty-field','.js-little-pass','.js-pass-compare'
+                'invalid-mail','empty-field','little-pass','pass-compare'
             ];
             var success = 'success';
             var exp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
