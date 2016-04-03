@@ -1,7 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-	<div class="col-md-2">	
-	</div>
-	<div class="main col-md-8">
+	<div class="main ">
 		<div class="main-menu">
 			<div>
 				<p class="lobby__title">Игровое поле</p>
@@ -20,7 +18,5 @@
 				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 			</button>
 		</a>
-	</div>
-	<div class="col-md-2">
 	</div>
 </fest:template>

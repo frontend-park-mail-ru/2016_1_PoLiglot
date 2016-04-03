@@ -1,7 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-	<div class="col-md-2">	
-	</div>
-	<div class="main col-md-8">
+	<div class="main ">
 		<div class="main-menu">
 			<h2 class="main-menu__h2">PoLiglot 1.0</h2>
 			<a href="#login" class="main-menu-link js-signin">
@@ -16,13 +14,9 @@
 			<a href="#scoreboard" class="main-menu-link">
 				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-guest js-noguest">Рекорды</button>
 			</a>
-			<a href="#" class="main-menu-link ">
-				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-noguest ">
+				<button type="button" class="btn btn-primary btn-lg btn-block js-main-menu__button main-menu__button js-noguest js-quit">
 					Выйти
 				</button>
-			</a>
 		</div>
-	</div>
-	<div class="col-md-2">
 	</div>
 </fest:template>

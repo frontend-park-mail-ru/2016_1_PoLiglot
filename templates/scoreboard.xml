@@ -1,7 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-	<div class="col-md-2">	
-	</div>
-	<div class="main col-md-8">
+	<div class="main ">
 		<div class="main-form">
 			<h2 class="main-form__h2">Рекорды</h2>
 			<hr />
@@ -26,7 +24,5 @@
 				</button>
 			</a>
 		</div>
-	</div>
-	<div class="col-md-2">
 	</div>
 </fest:template>
