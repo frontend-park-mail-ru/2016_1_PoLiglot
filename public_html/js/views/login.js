@@ -12,43 +12,58 @@ define([
 
         template: tmpl,
         events: {
-            submit: "send"
+            "submit .form": "send"
         },
         initialize: function () {
 
+        },
+        generateClass: function(str) {
+            return '.js-'+str;
         },
         render: function () {
             this.$el.html(tmpl());
             this.$name = this.$("input[name=login]");
             this.$pass = this.$("input[name=password]");
             this.$error = this.$('.js-error');
+            this.$errorAlert = this.$('.js-error-alert');
             return this;
         },
         show: function () {
+            this.$el.show();
             $('#page').html(this.render().$el);
             this.$('.main').fadeIn("slow");
         },
+        hide: function () {
+            this.$el.hide();
+        },
         send: function(event){
-        	event.preventDefault();
+            if(event){
+        	   event.preventDefault();
+            }
             this.$error.fadeOut('fast');
+            this.$errorAlert.fadeOut('fast');
             var name = this.$name.val();
             var pass = this.$pass.val();
-            var valid = session.isValidLogin(name,pass);
+            var valid = session.ValidLogin(name,pass);
 
         	if(valid == 'success'){
                 session.login(name,pass);
-        		$(window).ajaxError(function() {
-                        $('.js-error').text("404 Not Found").show("fast");
+        		$(window).ajaxError(
+                    function(event,jqXHR) {
+                            var error = ".js-"+ jqXHR.status + "-status"
+                            console.log(error);
+                            $(".js-error").fadeIn("fast");
+                            $(error).fadeIn("fast");
                 });
                 $(window).ajaxSuccess(
                     function() {
-                        Backbone.history.navigate('game', { trigger: true })
+                        Backbone.history.navigate('*default', { trigger: true })
                 });
                 
             }
             else {
                 this.$error.fadeIn('fast');
-                this.$(valid).fadeIn('fast');
+                this.$(this.generateClass(valid)).fadeIn('fast');
             }
 
             

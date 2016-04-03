@@ -12,10 +12,13 @@ define([
 
         template: tmpl,
         events: {
-            submit: "send"
+            'submit .form': "send"
         },
         initialize: function () {
             
+        },
+        generateClass: function(str) {
+            return '.js-'+str;
         },
         render: function () {
             this.$el.html(tmpl());
@@ -28,8 +31,12 @@ define([
             return this; 
         },
         show: function () {
+            this.$el.show();
             $('#page').html(this.render().$el);
             this.$('.main').fadeIn("slow");
+        },
+        hide: function () {
+            this.$el.hide();
         },
         send: function(event){
             event.preventDefault();
@@ -40,12 +47,16 @@ define([
             var name = this.$name.val();
             var pass = this.$pass.val();
             var passRepeat = this.$passRepeat.val();
-            var valid = session.isValidRegistration(email, name, pass, passRepeat);
+            var valid = session.ValidRegistration(email, name, pass, passRepeat);
 
             if (valid == 'success'){
             	session.registration(name,pass,email);
-            	$(window).ajaxError(function() {
-                        $('.js-error').text("404 Not Found").show("fast");
+            	$(window).ajaxError(
+                    function(event,jqXHR) {
+                            var error = ".js-"+ jqXHR.status + "-status"
+                            console.log(error);
+                            $(".js-error").fadeIn("fast");
+                            $(error).fadeIn("fast");
                 });
                 $(window).ajaxSuccess(
                     function() {
@@ -53,7 +64,7 @@ define([
                 });
             } else{
             	this.$error.fadeIn('fast');
-            	this.$(valid).fadeIn('fast');
+            	this.$(this.generateClass(valid)).fadeIn('fast');
             }
 
         }
