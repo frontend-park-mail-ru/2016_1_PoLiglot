@@ -20,7 +20,8 @@ require.config({
 
 var tests = [
     'models/score.test',
-    'collections/scores.test'
+    'collections/scores.test',
+    'views/viewManager.test'
 ];
 
 require(tests, function () {

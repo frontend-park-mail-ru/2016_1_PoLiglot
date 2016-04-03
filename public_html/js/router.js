@@ -6,6 +6,7 @@ define([
     'views/game',
     'views/registration',
     'views/lobby',
+    'views/viewManager'
 ], function(
     Backbone,
     MainView,
@@ -13,7 +14,8 @@ define([
     ScoreboardView,
     GameView,
     RegistrationView,
-    LobbyView
+    LobbyView,
+    ViewManager
 ){
 
     var Router = Backbone.Router.extend({
@@ -26,22 +28,28 @@ define([
             '*default': 'defaultActions'
         },
         defaultActions: function () {
-            MainView.show();// TODO
+            ViewManager.hide();
+            MainView.show();
         },
         scoreboardAction: function () {
+            ViewManager.hide();
             ScoreboardView.show();
         },
         lobbyAction: function(){
+            ViewManager.hide();
             LobbyView.show();
         },
         gameAction: function () {
-            GameView.show();// TODO
+            ViewManager.hide();
+            GameView.show();
         },
         registrationAction: function() {
+            ViewManager.hide();
             RegistrationView.show();
         },
         loginAction: function () {
-            LoginView.show();// TODO
+            ViewManager.hide();
+            LoginView.show();
         }
     });
 
