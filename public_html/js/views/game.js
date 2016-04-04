@@ -16,13 +16,15 @@ define([
             return this;
         },
         show: function () {
+            this.$el.show();
             $('#page').html(this.render().$el);// TODO
             this.$('.main').fadeIn("slow");
             this.$('..main-form__button__forward').removeAttr("disabled",true);
             this.$('.lobby__title').fadeIn("slow");// TODO
+            this.$el.show();
         },
         hide: function () {
-            // TODO
+            this.$el.hide();// TODO
         }
 
     });

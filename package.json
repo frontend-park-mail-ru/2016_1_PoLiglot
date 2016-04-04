@@ -19,7 +19,8 @@
     "grunt-shell": "^1.1.2"
   },
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "test" :"grunt test"
   },
   "dependencies": {
     "express-http-proxy": "^0.6.0",

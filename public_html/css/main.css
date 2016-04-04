@@ -1,21 +1,22 @@
 @font-face{
 	font-family: Segoe Print; /* имя шрифта для CSS правил */
 	src: local("Segoe Print"), /* проверяем наличие шрифта в ОС пользователя */
-    url(fonts/Segoe-Print.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    url(../fonts/Segoe-Print.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
 @font-face{
 	font-family: WhisperWrite; /* имя шрифта для CSS правил */
 	src: local("WhisperWrite"), /* проверяем наличие шрифта в ОС пользователя */
-    url(fonts/WhisperWrite_Medium.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    url(../fonts/WhisperWrite_Medium.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
 @font-face{
 	font-family: a_AlbionicTitulInfl; /* имя шрифта для CSS правил */
 	src: local("a_AlbionicTitulInfl"), /* проверяем наличие шрифта в ОС пользователя */
-    url(fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    url(../fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
 body{
 	padding-top:2%;
 	padding-bottom:2%;
+	background:url(../img/background-image.jpg);
 }
 .main-menu__h2{
 	color:black;
@@ -77,7 +78,7 @@ label{
 	box-shadow: 0 0 20px rgba(0,0,0,0.5);
 	background-color:#FFFFFF;
 	top: 10%;
-	padding-bottom: 2%;
+	padding-bottom: 5%;
 	padding-right: 5%;
 	padding-left: 5%;
 	border-radius: 4px;
@@ -86,12 +87,12 @@ label{
 		
 }
 .main-menu__button{
-	display:none;
+	display: none;
 	margin-top:5%;
 	font-family: a_AlbionicTitulInfl;
 	box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-.main-form__button__forward{
+.form__button__forward{
 	font-family: Segoe Print;
 	float:right;
 }
@@ -129,6 +130,13 @@ label{
 	display: none;
 }
 
+.lobby{
+	display: none;
+}
+
+.quit{
+	display: none;
+}
 
 
 

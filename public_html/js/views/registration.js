@@ -1,20 +1,24 @@
 define([
     'backbone',
-    'tmpl/registration'
+    'tmpl/registration',
+    'models/session'
 ], function(
     Backbone,
-    tmpl
+    tmpl,
+    session
 ){
 
     var registrationView = Backbone.View.extend({
 
         template: tmpl,
         events: {
-            submit: "send"
+            'submit .form': "send"
         },
         initialize: function () {
-            $('#page').html(tmpl());
-              // TODO
+            
+        },
+        generateClass: function(str) {
+            return '.js-'+str;
         },
         render: function () {
             this.$el.html(tmpl());
@@ -22,60 +26,49 @@ define([
             this.$pass = this.$("input[name=password]");
             this.$passRepeat = this.$("input[name=password_repeat]");
             this.$email = this.$("input[name=email]");
-            this.$error = this.$(".error");
-            this.$errorAlert = this.$(".error-alert");
-            this.$emptyField = this.$(".empty-field");
-            this.$littlePass = this.$(".little-pass");
-            this.$invalidMail = this.$(".invalid-mail");
-            this.$invalidLogin = this.$(".invalid-login");
-            this.$passCompare = this.$(".pass-compare");
-            return this; // TODO"
+            this.$error = this.$(".js-error");
+            this.$errorAlert = this.$(".js-error-alert");
+            return this; 
         },
         show: function () {
-            $('#page').html(this.render().$el);// TODO
+            this.$el.show();
+            $('#page').html(this.render().$el);
             this.$('.main').fadeIn("slow");
+        },
+        hide: function () {
+            this.$el.hide();
         },
         send: function(event){
             event.preventDefault();
-            this.$errorAlert.fadeOut('fast');
             this.$error.fadeOut('fast');
+            this.$errorAlert.fadeOut('fast');
 
-            if(!this.$name.val() || !this.$pass.val() || !this.$passRepeat.val() || !this.$email){
-                this.$error.fadeIn('fast');
-                this.$emptyField.fadeIn('fast');
-                return;
-            }
             var email = this.$email.val();
             var name = this.$name.val();
             var pass = this.$pass.val();
             var passRepeat = this.$passRepeat.val();
+            var valid = session.ValidRegistration(email, name, pass, passRepeat);
 
-            if(pass.length < 8 ){
-                this.$error.fadeIn('fast');
-                this.$littlePass.fadeIn('fast');
-                return;
+            if (valid == 'success'){
+            	session.registration(name,pass,email);
+            	$(window).ajaxError(
+                    function(event,jqXHR) {
+                            var error = ".js-"+ jqXHR.status + "-status"
+                            console.log(error);
+                            $(".js-error").fadeIn("fast");
+                            $(error).fadeIn("fast");
+                });
+                $(window).ajaxSuccess(
+                    function() {
+                        Backbone.history.navigate('login', { trigger: true })
+                });
+            } else{
+            	this.$error.fadeIn('fast');
+            	this.$(this.generateClass(valid)).fadeIn('fast');
             }
-            if(!/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email)){
-                this.$error.fadeIn('fast');
-                this.$invalidMail.fadeIn('fast');
-                return;
-            }
-            if(!/\w/.test(pass) || !/\w/.test(name)){
-                this.$error.fadeIn('fast');
-                this.$invalidLogin('fast');
-                return;
-            }
-
-            if(pass != passRepeat){
-                this.$error.fadeIn('fast');
-                this.$passCompare.fadeIn('fast');
-                return;
-            }
-
 
         }
 
     });
-
     return new registrationView();
 });

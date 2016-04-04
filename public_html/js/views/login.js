@@ -1,53 +1,72 @@
 define([
     'backbone',
-    'tmpl/login'
+    'tmpl/login',
+    'models/session'
 ], function(
     Backbone,
-    tmpl
+    tmpl,
+    session
 ){
 
     var loginView = Backbone.View.extend({
 
         template: tmpl,
         events: {
-            submit: "send"
+            "submit .form": "send"
         },
         initialize: function () {
-            $('#page').html(tmpl());
-              // TODO
+
+        },
+        generateClass: function(str) {
+            return '.js-'+str;
         },
         render: function () {
             this.$el.html(tmpl());
             this.$name = this.$("input[name=login]");
-        	this.$pass = this.$("input[name=password]");
-            this.$error = this.$('.error');
-            this.$errorAlert = this.$(".error-alert");
-            this.$emptyField = this.$(".empty-field");
-            return this; // TODO
+            this.$pass = this.$("input[name=password]");
+            this.$error = this.$('.js-error');
+            this.$errorAlert = this.$('.js-error-alert');
+            return this;
         },
         show: function () {
-            $('#page').html(this.render().$el);// TODO
+            this.$el.show();
+            $('#page').html(this.render().$el);
             this.$('.main').fadeIn("slow");
         },
         hide: function () {
-            $('#page').html(this.render().$el);
-            this.$('.main-menu__button').hide("slow");
-            this.$('.main').fadeOut("slow"); // TODO
+            this.$el.hide();
         },
         send: function(event){
-        	event.preventDefault();
-            this.$errorAlert.fadeOut('fast');
-        	this.$error.fadeOut('fast');
-
-        	if(!this.$name.val() || !this.$pass.val()){
-        		this.$error.fadeIn('fast');
-                this.$emptyField.fadeIn('fast');
-                
-                return;
+            if(event){
+        	   event.preventDefault();
             }
-
+            this.$error.fadeOut('fast');
+            this.$errorAlert.fadeOut('fast');
             var name = this.$name.val();
             var pass = this.$pass.val();
+            var valid = session.ValidLogin(name,pass);
+
+        	if(valid == 'success'){
+                session.login(name,pass);
+        		$(window).ajaxError(
+                    function(event,jqXHR) {
+                            var error = ".js-"+ jqXHR.status + "-status"
+                            console.log(error);
+                            $(".js-error").fadeIn("fast");
+                            $(error).fadeIn("fast");
+                });
+                $(window).ajaxSuccess(
+                    function() {
+                        Backbone.history.navigate('*default', { trigger: true })
+                });
+                
+            }
+            else {
+                this.$error.fadeIn('fast');
+                this.$(this.generateClass(valid)).fadeIn('fast');
+            }
+
+            
 
         }
 

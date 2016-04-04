@@ -25,9 +25,11 @@ app.listen(PORT, function () {
 });
 
 
-app.use('/proxy', proxy('http://rutracker.org', {
-	forwardPath: function(req, res) {
-		console.log(1234);
-		return require('url').parse(req.url).path;
-	}
+
+app.use('/api', proxy('http://localhost:8081/', {
+	forwardPath: function (req, res) {
+        var url = '/api' + require('url').parse(req.url).path;
+        console.log('Proxy: ' + url);
+        return url;
+    }
 }));

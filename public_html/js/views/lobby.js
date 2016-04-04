@@ -9,20 +9,22 @@ define([
     var LobbyView = Backbone.View.extend({
         template: tmpl,
         initialize: function () {
-            $('#page').html(tmpl());// TODO
+            $('#page').html(tmpl());
         },
         render: function () {
             this.$el.html(tmpl());
             return this;
         },
         show: function () {
-            $('#page').html(this.render().$el);// TODO
+            this.$el.show();
+            $('#page').html(this.render().$el);
             this.$('.main').fadeIn("slow");
             this.$('..main-form__button__forward').removeAttr("disabled",true);
-            this.$('.lobby__title').fadeIn("slow");// TODO
+            this.$('.lobby__title').fadeIn("slow");
+            this.$el.show();
         },
         hide: function () {
-            // TODO
+            this.$el.hide();
         }
 
     });
