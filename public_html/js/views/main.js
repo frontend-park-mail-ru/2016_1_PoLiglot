@@ -14,11 +14,28 @@ define([
             'click .js-quit': 'quit'
         },
         template: tmpl,
+        initialize: function() {
+            this.render();
+        },
         render: function () {
             this.$el.html(tmpl());
-            return this;
         },
-        checkLogin : function() {
+        notGuest: function(){
+            console.log("noguest");
+            $('.js-guest').hide();
+            $('.js-noguest').show();
+
+        },
+        guest:function(){
+            console.log("guest");
+            $('.js-noguest').hide();
+            $('.js-guest').show();
+            
+            
+        },
+        checkLogin: function(){
+            this.off("OK");
+            this.off("NO")
             this.on("OK", function() { 
                 this.notGuest();
             }.bind(this));
@@ -27,36 +44,35 @@ define([
             }.bind(this));
             session.isLoggedIn()
             .done(function(){
+                console.log("ok");
                 this.trigger('OK');
             }.bind(this))
             .fail(function(){
+                console.log("no");
                 this.trigger('NO');
             }.bind(this))
         },
-        notGuest: function(){
-            this.$('.js-noguest').show();
-        },
-        guest:function(){
-            this.$('.js-guest').show();
-            
-        },
         show: function () {
-            this.checkLogin();
+            console.log("show");
+            this.trigger("show",this);
             this.$el.show();
-            $('#page').html(this.render().$el);
+            this.checkLogin();
+            
+            //$('#page').html(this.render().$el);
             this.$('.main').fadeIn("fast");
+            
         },
         hide: function () {
             this.$el.hide();
         },
         quit: function(event) {
-            console.log(event);
             if(event){
                event.preventDefault();
             }
-            console.log("выход");
             session.logout();
-            Backbone.history.navigate('login', { trigger: true })
+            console.log("выход");
+            
+            Backbone.history.navigate('ll',true);
         },
     });
 

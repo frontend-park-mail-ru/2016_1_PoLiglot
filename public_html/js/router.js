@@ -27,28 +27,34 @@ define([
             'signup': 'registrationAction',
             '*default': 'defaultActions'
         },
+        initialize: function () {
+            this.viewManager = new ViewManager();
+
+
+            this.viewManager.addView(MainView);
+            this.viewManager.addView(LoginView);
+            this.viewManager.addView(RegistrationView);
+            this.viewManager.addView(ScoreboardView);
+            this.viewManager.addView(LobbyView);
+            this.viewManager.addView(GameView);
+        },
+
         defaultActions: function () {
-            ViewManager.hide();
             MainView.show();
         },
         scoreboardAction: function () {
-            ViewManager.hide();
             ScoreboardView.show();
         },
         lobbyAction: function(){
-            ViewManager.hide();
             LobbyView.show();
         },
         gameAction: function () {
-            ViewManager.hide();
             GameView.show();
         },
         registrationAction: function() {
-            ViewManager.hide();
             RegistrationView.show();
         },
         loginAction: function () {
-            ViewManager.hide();
             LoginView.show();
         }
     });

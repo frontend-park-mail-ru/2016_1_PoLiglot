@@ -15,7 +15,7 @@ define([
             'submit .form': "send"
         },
         initialize: function () {
-            
+            this.render();
         },
         generateClass: function(str) {
             return '.js-'+str;
@@ -32,7 +32,7 @@ define([
         },
         show: function () {
             this.$el.show();
-            $('#page').html(this.render().$el);
+            this.trigger("show",this);
             this.$('.main').fadeIn("slow");
         },
         hide: function () {

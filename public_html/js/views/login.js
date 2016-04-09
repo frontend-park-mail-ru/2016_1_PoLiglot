@@ -15,7 +15,7 @@ define([
             "submit .form": "send"
         },
         initialize: function () {
-
+            this.render();
         },
         generateClass: function(str) {
             return '.js-'+str;
@@ -30,8 +30,9 @@ define([
         },
         show: function () {
             this.$el.show();
-            $('#page').html(this.render().$el);
             this.$('.main').fadeIn("slow");
+            this.trigger("show",this);
+            
         },
         hide: function () {
             this.$el.hide();
@@ -57,7 +58,7 @@ define([
                 });
                 $(window).ajaxSuccess(
                     function() {
-                        Backbone.history.navigate('*default', { trigger: true })
+                        Backbone.history.navigate('', { trigger: true })
                 });
                 
             }
