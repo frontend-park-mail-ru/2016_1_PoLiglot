@@ -1,5 +1,0 @@
-cat 
-dog
-pig
-frog
-animal
