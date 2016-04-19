@@ -1,47 +1,38 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 	<div class="main ">
-		<div class="main-menu row">
-			<div class="col-md-2 user_frame">
-				<p class="segoe_print_frame">Вы:</p>
-				<p class="segoe_print_frame">Никнэйм:</p>
-				<p class="segoe_print_frame">Очки за игру:</p>
-				<p class="segoe_print_frame">Рэйтинг:</p>
+		<div class="main-menu ">
+			<div class="users_header row">
+				<div class="col-md-2 user_frame">
+					<p class="segoe_print_frame">Вы:</p>
+					<p class="segoe_print_frame">Никнэйм:</p>
+					<p class="segoe_print_frame">Очки за игру:</p>
+					<p class="segoe_print_frame">Рэйтинг:</p>
+				</div>
+				<div class="col-md-5 div_timer">
+					<canvas id="timer" height="150" width="150" class="timer"></canvas>
+				</div>
+				<div class="col-md-2 versus_frame">
+					<p class="segoe_print_frame">Соперник:</p>
+					<p class="segoe_print_frame">Никнэйм:</p>
+					<p class="segoe_print_frame">Очки за игру:</p>
+					<p class="segoe_print_frame">Рэйтинг:</p>
+				</div>
 			</div>
-			<div class="col-md-5 div_timer">
-				<canvas id="timer" height="150" width="150" class="timer"></canvas>
-			</div>
-			<div class="col-md-2 versus_frame">
-				<p class="segoe_print_frame">Соперник:</p>
-				<p class="segoe_print_frame">Никнэйм:</p>
-				<p class="segoe_print_frame">Очки за игру:</p>
-				<p class="segoe_print_frame">Рэйтинг:</p>
-			</div>
-			<div class="question_field ">
+			<div class="shuffle_main_row">
+				<center>
 				<div class="shuffle_string">
 
 				</div>
-				<img src="http://lorempixel.com/200/200/" class="question_field_img"/>
+				</center>
 			</div>
-			<div class="answer_field ">
-				<form class="form-horizontal answer_field_form form" action="">
-					<div class="form-group ">
-	    				<div class="col-sm-10 col-sm-offset-2">
-	      					<input type="text" class="form-control elem_align" placeholder="Ваш ответ" name="word"/>
-	    				</div>
-	  				</div>
-	  				<div class="form-group">
-	    				<div class="col-sm-offset-2 col-sm-10">
-	      					<button type="submit" class=" btn btn-primary elem_align send">Ответить</button>
-	    				</div>
-	  				</div>
-	  				<div class="form-group">
-	    				<div class="col-sm-offset-2 col-sm-10">
-	      					<button type="button" class=" btn btn-danger elem_align">Пропустить</button>
-	    				</div>
-	  				</div>
-	  			</form>
+			<div class="question_field row">
 				
 			</div>
+			<div class="row">
+				<center>
+				<button class=" btn btn-primary elem_align  row send">Ответить</button>
+				</center>
+	  		</div>
 		</div>
 	</div>
 </fest:template>

@@ -14,8 +14,8 @@
 				<div id="fountainG_7" class="fountainG"></div>
 				<div id="fountainG_8" class="fountainG"></div>
 			</div>
-			<div></div>
-			<div></div>
+			<div class="js-result result"></div>
+			<div id="container"></div>
 		</div>
 		<hr/>
 		<a href="#">

@@ -12,7 +12,7 @@ define([
 
         template: tmpl,
         events: {
-            "submit .form": "send"
+            "submit .login_form": "send"
         },
         initialize: function () {
             this.render();
@@ -29,7 +29,9 @@ define([
             return this;
         },
         show: function () {
+            this.$el.appendTo("#page");
             this.$el.show();
+
             this.$('.main').fadeIn("slow");
             this.trigger("show",this);
             
@@ -48,15 +50,16 @@ define([
             var valid = session.ValidLogin(name,pass);
 
         	if(valid == 'success'){
-                session.login(name,pass);
-        		$(window).ajaxError(
-                    function(event,jqXHR) {
-                            var error = ".js-"+ jqXHR.status + "-status"
+                session.login(name,pass)
+        		.fail(
+                    function(event) {
+                            console.log(event.status);
+                            var error = ".js-"+event.status + "-status"
                             console.log(error);
                             $(".js-error").fadeIn("fast");
                             $(error).fadeIn("fast");
-                });
-                $(window).ajaxSuccess(
+                })
+                .done(
                     function() {
                         Backbone.history.navigate('', { trigger: true })
                 });

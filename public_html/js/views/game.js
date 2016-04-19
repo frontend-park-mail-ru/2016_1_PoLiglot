@@ -6,16 +6,19 @@ define([
 ], function(
     Backbone,
     tmpl,
-    game,
+    Game,
     session
 ){
     var GameView = Backbone.View.extend({
         template: tmpl,
         events:{
-            'submit .form': "send"
+            'mousedown .letter':'moveBlock',
+            'click .send': 'post'
+            
         },
         initialize: function () {
-            $('#page').html(tmpl());// TODO
+            console.log(session.get("login"));
+            this.render();
         },
         render: function () {
             this.$el.html(tmpl());
@@ -30,7 +33,7 @@ define([
         var c = document.querySelector('#timer');
         var ctx = c.getContext('2d');
         ctx.arc(0, 0, 70, Math.PI*2, 0);
-        ctx.save();// помещаем текущий контекст в стэк
+        ctx.save();
         ctx.clearRect(0,0,150,150);
         ctx.translate(75, 75);
         ctx.scale(0.4,0.4);
@@ -59,8 +62,8 @@ define([
         }
 
 
-        ctx.stroke();// нарисовали то, что ранее описали
-        ctx.restore();// достаем последний сохраненный контекст из стэка
+        ctx.stroke();
+        ctx.restore();
 
         ctx.save();
         ctx.lineWidth=2;
@@ -95,10 +98,13 @@ define([
         ctx.save();
 
         },
+        moveBlock: function(obj_event){
+            $('.shuffle_string').sortable();
+        },
         loseSound:function(){
-            var audio = new Audio(); // Создаём новый элемент Audio
-            audio.src = '../../sounds/sound_lose.mp3'; // Указываем путь к звуку "клика"
-            audio.autoplay = true; // Автоматически запускаем 
+            var audio = new Audio(); 
+            audio.src = '../../sounds/sound_lose.mp3'; 
+            audio.autoplay = true;
         },
         beginSound:function(){
             var audio = new Audio(); // Создаём новый элемент Audio
@@ -106,7 +112,8 @@ define([
             audio.autoplay = true; // Автоматически запускаем 
         },
         parseQuestion:function() {
-            game.getQuestion()
+            console.log(session.get("login"));
+            Game.getQuestion()
             .done(function(data){
                 console.log(data);
                 this.showShuffle(data);
@@ -118,37 +125,92 @@ define([
         showShuffle: function(data){
             shuffle = data['shuffle'].toUpperCase();
             word_id = data['id'];
+            Game.set({"id":word_id});
             length = shuffle.length;
             for(var i=0; i!=length; i++){
                 console.log(shuffle[i]);
-                $('.shuffle_string').append('<div class="letter"><p class="white_letter">'+shuffle[i]+'</p></div>');
-            }
+                $('.shuffle_string').append('<div class="letter letter-event"><p class="white_letter">'+shuffle[i]+'</p></div>');
+             }
+            $('.question_field').append('<img class="question_img" src="../pics/'+data['right']+'.jpg">');
         },
-        post: function(event){
-            console.log(event);
-           if(event){
-               event.preventDefault();
-            }
-            console.log(23);
-        },
+        
         show: function () {
+            this.$el.appendTo("#page");
             this.$el.show();
-            $('#page').html(this.render().$el);// TODO
+            this.trigger("show", this);
             this.$('.main').fadeIn("slow");
             this.$('.lobby__title').fadeIn("slow");// TODO
-            alert("Игра начнётся как только вы нажмёте ок");
-            this.loseSound();
+            //alert("Игра начнётся как только вы нажмёте ок");
+            this.beginSound();
             this.parseQuestion();
             setInterval(function(){
                 this.startTimer()}.bind(this)
                 ,62.5);
-            console.log(20);
         },
         hide: function () {
+            $('.letter').remove();
+            $('.question_img').remove();
             this.$el.hide();// TODO
-        }
+        },
+        getSumResult:function(data){
+            Game.set({'score':data['score'], 'best':data['best']});
+            console.log(data);
+            swal({
+                title: 'xxx',
+                text: "Результат: "+data['score'],
+                type: 'success',
+                showConfirmButton: true
+            },function() {
 
+            });
+        },
+        getAnswer: function(data){
+            var round_counter = Game.get('round_counter');
+            round_counter++;
+            var type='success';
+            var win_status = 'Правильный ответ!'
+
+            Game.set({'round_counter':round_counter});
+            if(data['answer'] ){
+                $('.main').effect('highlight',{color: "#05f04b"},250);
+                
+            } else {
+                $('.main').effect('highlight',{color: "red"},250);
+                type='error';
+                win_status="Неправильный ответ!"
+            }
+            swal({
+                title: win_status,
+                text: "Правильное слово: "+data['right'], 
+                type: type,  
+                showConfirmButton: true 
+            },function() {
+                if(round_counter < 5) {
+                    this.hide();
+                    this.show();
+                }
+                 else{
+                    Game.set({'round_counter':0});
+                    Backbone.history.navigate('lobby',true );
+                }
+            }.bind(this));
+        },
+        post: function(event) {
+            var right = "";
+            if(event){
+               event.preventDefault();
+            }
+            $('.letter').each(function(){
+               right = right + $(this).text();
+            });
+            right = right.toLowerCase();
+            var user = session.get('user')
+            var id = Game.get('id');
+            Game.sendAnswerForFirstLevel(id,right)
+            .always(function(data){
+                this.getAnswer(data);
+            }.bind(this));
+        },
     });
-
     return new GameView();
 });

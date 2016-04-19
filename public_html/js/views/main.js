@@ -15,6 +15,7 @@ define([
         },
         template: tmpl,
         initialize: function() {
+            this.off();
             this.render();
         },
         render: function () {
@@ -54,12 +55,12 @@ define([
         },
         show: function () {
             console.log("show");
-            this.trigger("show",this);
+            this.$el.appendTo("#page");
             this.$el.show();
             this.checkLogin();
-            
             //$('#page').html(this.render().$el);
             this.$('.main').fadeIn("fast");
+            this.trigger("show",this);
             
         },
         hide: function () {
@@ -69,10 +70,16 @@ define([
             if(event){
                event.preventDefault();
             }
-            session.logout();
+            session.logout()
+            .done(function(){
+                
+            })
+            .fail(function(){
+                Backbone.history.navigate('quit',true);
+            });
             console.log("выход");
             
-            Backbone.history.navigate('ll',true);
+            
         },
     });
 
