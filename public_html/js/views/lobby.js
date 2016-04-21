@@ -60,6 +60,9 @@ define([
             if(data['score'] > 0){
                 $('.js-result').text('Результат:'+data['score']);
             }
+            if(data['best']) {
+                this.jumpingCup();
+            }
         },
         show: function () {
             this.$el.appendTo("#page");
@@ -67,7 +70,6 @@ define([
             this.trigger("show",this);
             this.$('.main').fadeIn("slow");
             this.$('.lobby__title').fadeIn("slow");
-            this.jumpingCup();
             Game.getSumResultForFirstLevel()
             .always(function(data){
                 this.getSumResult(data);
