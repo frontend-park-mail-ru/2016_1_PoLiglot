@@ -1,26 +1,38 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-	<div class="col-md-2">	
-	</div>
-	<div class="main col-md-8">
-		<div class="main-menu">
-			<div>
-				<p class="lobby__title">Игровое поле</p>
+	<div class="main ">
+		<div class="main-menu ">
+			<div class="users_header row">
+				<div class="col-md-2 user_frame">
+					<p class="segoe_print_frame">Вы:</p>
+					<p class="segoe_print_frame">Никнэйм:</p>
+					<p class="segoe_print_frame">Очки за игру:</p>
+					<p class="segoe_print_frame">Рэйтинг:</p>
+				</div>
+				<div class="col-md-5 div_timer">
+					<canvas id="timer" height="150" width="150" class="timer"></canvas>
+				</div>
+				<div class="col-md-2 versus_frame">
+					<p class="segoe_print_frame">Соперник:</p>
+					<p class="segoe_print_frame">Никнэйм:</p>
+					<p class="segoe_print_frame">Очки за игру:</p>
+					<p class="segoe_print_frame">Рэйтинг:</p>
+				</div>
 			</div>
-			<div></div>
-			<div></div>
+			<div class="shuffle_main_row">
+				<center>
+				<div class="shuffle_string">
+
+				</div>
+				</center>
+			</div>
+			<div class="question_field row">
+				
+			</div>
+			<div class="row">
+				<center>
+				<button class=" btn btn-primary elem_align  row send">Ответить</button>
+				</center>
+	  		</div>
 		</div>
-		<hr/>
-		<a href="#">
-			<button class="btn btn-primary main-form__button">
-				<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Вернуться в меню
-			</button>
-		</a>
-		<a href="#game">
-			<button class="btn btn-primary main-form__button__forward"> Начать игру
-				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-			</button>
-		</a>
-	</div>
-	<div class="col-md-2">
 	</div>
 </fest:template>

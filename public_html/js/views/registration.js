@@ -12,10 +12,10 @@ define([
 
         template: tmpl,
         events: {
-            'submit .form': "send"
+            'submit .form': 'send'
         },
         initialize: function () {
-            
+            this.render();
         },
         generateClass: function(str) {
             return '.js-'+str;
@@ -31,9 +31,11 @@ define([
             return this; 
         },
         show: function () {
+            this.$el.appendTo("#page");
             this.$el.show();
-            $('#page').html(this.render().$el);
             this.$('.main').fadeIn("slow");
+            this.trigger("show",this);
+            
         },
         hide: function () {
             this.$el.hide();
@@ -50,18 +52,19 @@ define([
             var valid = session.ValidRegistration(email, name, pass, passRepeat);
 
             if (valid == 'success'){
-            	session.registration(name,pass,email);
-            	$(window).ajaxError(
-                    function(event,jqXHR) {
-                            var error = ".js-"+ jqXHR.status + "-status"
+            	session.registration(name,pass,email)
+            	.fail(
+                    function(event) {
+                            var error = ".js-"+ event.status + "-status"
                             console.log(error);
                             $(".js-error").fadeIn("fast");
                             $(error).fadeIn("fast");
-                });
-                $(window).ajaxSuccess(
+                })
+                .done(
                     function() {
-                        Backbone.history.navigate('login', { trigger: true })
-                });
+                        Backbone.history.navigate('login',true );
+                }.bind(this));
+                //$(window).off();
             } else{
             	this.$error.fadeIn('fast');
             	this.$(this.generateClass(valid)).fadeIn('fast');

@@ -1,57 +1,51 @@
-define([
-    'backbone',
-    'views/main',
-    'views/login',
-    'views/scoreboard',
-    'views/game',
-    'views/registration',
-    'views/lobby',
-    'views/viewManager'
-], function(
-    Backbone,
-    MainView,
-    LoginView,
-    ScoreboardView,
-    GameView,
-    RegistrationView,
-    LobbyView,
-    ViewManager
-){
+define(function (require) {
+        var Backbone = require('backbone'),
+            mainView = require('views/main'),
+            loginView = require('views/login'),
+            registerView = require('views/registration'),
+            scoreboardView = require('views/scoreboard'),
+            gameView = require('views/game'),
+            viewManager = require('views/viewManager');
+            lobbyView = require('views/lobby');
 
-    var Router = Backbone.Router.extend({
-        routes: {
-            'scoreboard': 'scoreboardAction',
-            'game': 'gameAction',
-            'login': 'loginAction',
-            'lobby': 'lobbyAction',
-            'signup': 'registrationAction',
-            '*default': 'defaultActions'
-        },
-        defaultActions: function () {
-            ViewManager.hide();
-            MainView.show();
-        },
-        scoreboardAction: function () {
-            ViewManager.hide();
-            ScoreboardView.show();
-        },
-        lobbyAction: function(){
-            ViewManager.hide();
-            LobbyView.show();
-        },
-        gameAction: function () {
-            ViewManager.hide();
-            GameView.show();
-        },
-        registrationAction: function() {
-            ViewManager.hide();
-            RegistrationView.show();
-        },
-        loginAction: function () {
-            ViewManager.hide();
-            LoginView.show();
-        }
-    });
+        var Router = Backbone.Router.extend({
+            routes: {
+                'login': 'loginAction',
+                'signup': 'registerAction',
+                'scoreboard': 'scoreboardAction',
+                'game': 'gameAction',
+                'lobby': 'lobbyAction',
+                '*default': 'defaultAction'
+            },
 
-    return new Router();
-});
+            initialize: function () {
+                viewManager.addView(mainView);
+                viewManager.addView(loginView);
+                viewManager.addView(registerView);
+                viewManager.addView(scoreboardView);
+                viewManager.addView(gameView);
+                viewManager.addView(lobbyView);
+            },
+            loginAction: function () {
+                loginView.show();
+            },
+            registerAction: function () {
+                registerView.show();
+            },
+            scoreboardAction: function () {
+                scoreboardView.show();
+            },
+            gameAction: function () {
+                gameView.show();
+            },
+            defaultAction: function () {
+                mainView.show();
+            },
+            lobbyAction: function() {
+                lobbyView.show();
+            }
+        });
+
+        return new Router();
+    }
+);

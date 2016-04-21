@@ -11,16 +11,18 @@ define([
     var scoreboardView = Backbone.View.extend({
         template: tmpl,
         initialize: function () {
-            $('#page').html(tmpl({collection: players.toJSON()}));// TODO
+            this.render()
         },
         render: function () {
             this.$el.html(tmpl({collection: players.toJSON()}));
             return this;
         },
         show: function () {
+            this.$el.appendTo("#page");
             this.$el.show();
-            $('#page').html(this.render().$el);// TODO
             this.$('.main').fadeIn("slow");// TODO
+            this.trigger("show",this);
+            
         },
         hide: function () {
             this.$el.hide();

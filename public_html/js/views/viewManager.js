@@ -1,29 +1,25 @@
-define([
-    'backbone',
-    'views/main',
-    'views/game',
-    'views/login',
-    'views/scoreboard',
-    'views/registration',
-    'views/lobby'
-], function(
-    Backbone,
-    MainView,
-    GameView,
-    LoginView,
-    ScoreboardView,
-    RegistrationView,
-    LobbyView
-){
-    var ManagerView = Backbone.View.extend({
-        views: [ MainView, GameView, LoginView, ScoreboardView, RegistrationView, LobbyView ],
-        hide: function () {
-            _.each(this.views , function(view) {
-                console.log("скрыл");
-                view.hide();
+define(function (require) {
+    var Backbone = require('backbone');
+
+    var Manager = Backbone.View.extend({
+        views: [],
+
+        addView: function (currentView) {
+            this.views.push(currentView);
+            this.listenTo(currentView, 'show', this.onShow.bind(this, currentView));
+        },
+
+        onShow: function (currentView) {
+            this.views.forEach(function (view) {
+                if (view !== currentView) {
+                    view.hide();
+                }
             });
         }
+
     });
-    return new ManagerView();
+
+    return new Manager();
 });
+
 

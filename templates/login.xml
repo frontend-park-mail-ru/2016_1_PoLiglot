@@ -1,7 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-	<div class="col-md-2">	
-	</div>
-	<div class="main col-md-8">
+	<div class="main">
 		<div class="main-form">
 			<h2 class="main-form__h2">Вход</h2>
 			<hr />
@@ -10,7 +8,7 @@
 				<div class="js-error-alert js-400-status error-alert"><strong>Ой! </strong>Логин или пароль введены неверно! </div>
 				<div class="js-error-alert js-500-status error-alert"><strong>Ой! </strong> Кажется интернет пропал</div>
 			</div>
-			<form class="form-horizontal form" action="">
+			<form class="form-horizontal login_form" action="">
   				<div class="form-group">
     				<label for="inputEmail3" class="col-sm-2 control-label">Логин:</label>
     				<div class="col-sm-10">
@@ -36,7 +34,5 @@
 				</button>
 			</a>
 		</div>
-	</div>
-	<div class="col-md-2">
 	</div>
 </fest:template>

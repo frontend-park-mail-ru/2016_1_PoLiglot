@@ -7,9 +7,13 @@ define([
     var SessionModel = Backbone.Model.extend({
         urlLogin: '/api/session/',
         urlRegistration: '/api/user/',
-
+        defaults:{
+            user: '',
+            login: '',
+            score: 0,
+        },
         login: function (name, pass) {
-            $.ajax({
+            return this.save({}, {
                 type: 'PUT',
                 url: this.urlLogin,
                 dataType: 'json',
@@ -18,12 +22,6 @@ define([
                     login: name,
                     password: pass
                 }),
-                success: function (data) {
-
-                },
-                error: function (xhr, str) {
-                }
-
             });
         },
 
@@ -36,14 +34,14 @@ define([
         },
 
         logout: function() {
-            $.ajax({
+            return this.save({}, {
                 type: 'DELETE',
                 url: this.urlLogin,
             });
         },
 
         registration: function(name, pass, email) {
-            $.ajax({
+            return this.save({}, {
                 type: 'PUT',
                 url: this.urlRegistration,
                 dataType: 'json',
