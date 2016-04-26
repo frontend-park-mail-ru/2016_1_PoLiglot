@@ -4,18 +4,20 @@
 			<div class="users_header row">
 				<div class="col-md-2 user_frame">
 					<p class="segoe_print_frame">Вы:</p>
-					<p class="segoe_print_frame">Никнэйм:</p>
-					<p class="segoe_print_frame">Очки за игру:</p>
-					<p class="segoe_print_frame">Рэйтинг:</p>
+					<h3 class="segoe_print_frame user"></h3>
+					<p class="segoe_print_frame ">Очки за игру: <span class="segoe_print_frame myScore"></span></p>
+					<p class="segoe_print_frame userRecord">Рекорд: </p>
 				</div>
 				<div class="col-md-5 div_timer">
-					<canvas id="timer" height="150" width="150" class="timer"></canvas>
+					<center>
+						<div id="timer"  class="timer"></div>
+					</center>
 				</div>
 				<div class="col-md-2 versus_frame">
 					<p class="segoe_print_frame">Соперник:</p>
-					<p class="segoe_print_frame">Никнэйм:</p>
-					<p class="segoe_print_frame">Очки за игру:</p>
-					<p class="segoe_print_frame">Рэйтинг:</p>
+					<h3 class="segoe_print_frame enemy"></h3>
+					<p class="segoe_print_frame ">Очки за игру: <span class="segoe_print_frame enemyScore"></span></p>
+					<p class="segoe_print_frame enemyRecord">Рекорд: </p>
 				</div>
 			</div>
 			<div class="shuffle_main_row">
@@ -30,7 +32,7 @@
 			</div>
 			<div class="row">
 				<center>
-				<button class=" btn btn-primary elem_align  row send">Ответить</button>
+				<button class=" elem_align  row send">Ответить</button>
 				</center>
 	  		</div>
 		</div>

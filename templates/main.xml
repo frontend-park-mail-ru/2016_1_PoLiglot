@@ -11,11 +11,10 @@
 			<a href="#signup" class="main-link js-signup">
 				<div type="button" class="js-main-menu__button main-menu__button js-guest">Зарегистрироваться</div>
 			</a>
-				<div data-href="#scoreboard" type="button" class="js-main-menu__button main-menu__button js-guest js-noguest">Рекорды</div>
-
-				<div class="js-main-menu__button main-menu__button js-noguest js-quit">
-					Выйти
-				</div>
+			<a href="#scoreboard">
+				<div type="button" class="js-main-menu__button main-menu__button js-guest js-noguest">Рекорды</div>
+			</a>
+				<div class="js-main-menu__button main-menu__button js-noguest js-quit">Выйти</div>
 		</div>
 	</div>
 </fest:template>
