@@ -254,12 +254,12 @@ define([
             var enemy =data['enemy'];
             $('.user').text(user);
             $('.enemy').text(enemy);
-            var userRecord = $('.userRecord').text() + data['userRecord'];
-            var enemyRecord = $('.enemyRecord').text() + data['enemyRecord'];
+            var userRecord = data['userRecord'];
+            var enemyRecord =  data['enemyRecord'];
             $('.userRecord').text(userRecord);
             $('.enemyRecord').text(enemyRecord);
-            var userScore = $('.myScore').text() + '0';
-            var enemyScore = $('.enemyScore').text() + '0';
+            var userScore = '0';
+            var enemyScore = '0';
             $('.myScore').text(userScore);
             $('.enemyScore').text(enemyScore);
 
@@ -270,6 +270,10 @@ define([
             if(anim) {
                 anim.stop();
             }
+            $('.userRecord').text('');
+            $('.enemyRecord').text('');
+            $('.myScore').text('');
+            $('.enemyScore').text('');
         },
         show: function () {
             this.$el.appendTo("#page");
@@ -321,7 +325,12 @@ define([
                     title: "Поиск соперника...",
                     text : '<center><div class="loading2"></div></center>',
                     html: true,
-                    showConfirmButton: false
+                    showConfirmButton: false,
+                    showCancelButton: true
+                },function(isConfirm){
+                    if(isConfirm == false){
+                        Backbone.history.navigate('lobby',true );
+                    }
                 });
                 this.jumpingCup();
             }.bind(this);
@@ -339,7 +348,7 @@ define([
                         Backbone.history.navigate('lobby',true );
                         break;
                     case 'startGame':
-                        $('h2').text('Игра начнётся через 3 секунды');
+                        $('.alert_title').text('Игра начнётся через 3 секунды');
                         setTimeout(function(){
                             swal.close();
                             this.beginSound();
@@ -373,9 +382,10 @@ define([
                         }
                         swal({
                             title: status,
-                            text: data['user'] + data['myScore'] + data['enemy'] + data['enemyScore'], 
+                            text:  data['myName'] + ': ' + data['myScore'] + "<br>" + data['enemyName'] + ': ' + data['enemyScore'], 
                             type: 'success',  
-                            showConfirmButton: true 
+                            showConfirmButton: true,
+                            html: true 
                         },function() {
 
                             Backbone.history.navigate('lobby',true );

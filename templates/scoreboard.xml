@@ -19,7 +19,7 @@
 			</div>
 			<hr/>
 			<a href="#">
-				<button class="btn btn-primary js-main-form__button main-form__button">
+				<button class="js-main-form__button main-form__button">
 					<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Назад
 				</button>
 			</a>

@@ -31,10 +31,6 @@ define([
             this.trigger("show",this);
             this.$('.main').fadeIn("slow");
             this.$('.lobby__title').fadeIn("slow");
-            Game.getSumResultForFirstLevel()
-            .always(function(data){
-                this.getSumResult(data);
-            }.bind(this));
         },
         hide: function () {
             this.$el.hide();

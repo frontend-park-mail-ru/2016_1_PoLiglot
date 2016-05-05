@@ -6,7 +6,7 @@
 					<p class="segoe_print_frame">Вы:</p>
 					<h3 class="segoe_print_frame user"></h3>
 					<p class="segoe_print_frame ">Очки за игру: <span class="segoe_print_frame myScore"></span></p>
-					<p class="segoe_print_frame userRecord">Рекорд: </p>
+					<p class="segoe_print_frame ">Рекорд: <span class="segoe_print_frame  userRecord"></span></p>
 				</div>
 				<div class="col-md-5 div_timer">
 					<center>
@@ -17,7 +17,7 @@
 					<p class="segoe_print_frame">Соперник:</p>
 					<h3 class="segoe_print_frame enemy"></h3>
 					<p class="segoe_print_frame ">Очки за игру: <span class="segoe_print_frame enemyScore"></span></p>
-					<p class="segoe_print_frame enemyRecord">Рекорд: </p>
+					<p class="segoe_print_frame ">Рекорд: <span class="segoe_print_frame  enemyRecord"></span></p>
 				</div>
 			</div>
 			<div class="shuffle_main_row">
