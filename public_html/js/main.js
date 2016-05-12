@@ -1,5 +1,4 @@
 require.config({
-    urlArgs: "_=" + (new Date()).getTime(),
     baseUrl: "js",
     paths: {
         jquery: "lib/jquery-1.10.2",
@@ -40,7 +39,7 @@ require([
     router
 ){
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('js/ServiceWorker.js').then(function(reg) {
+        navigator.serviceWorker.register('ServiceWorker.js').then(function(reg) {
             console.log('Registration succeeded. Scope is ' + reg.scope);
         }).catch(function(error) {
             console.log('Registration failed with ' + error);
