@@ -15,7 +15,7 @@ define([
         template: tmpl,
         urlFirstLevel: "ws://localhost:8080/api/gameplay",
         events:{
-            'click .send': 'post',
+            'click .button_send': 'post',
         },
         initialize: function () {
             this.render();
@@ -220,14 +220,14 @@ define([
             Game.getPicture(picture)
             .always(function(data){
                 var src = data['value'][0]['contentUrl'];
-                $('.question_img').remove();
-                $('.question_field').append('<img class="question_img" src="'+src+'">');
+                $('.question__img').remove();
+                $('.question__field').append('<img class="question__img" src="'+src+'">');
             }.bind(this));
             
         },
         removeContent : function(){
             $('.letter').remove();
-            $('.question_img').remove();
+            $('.question__img').remove();
         },
         showShuffle: function(data){
             shuffle = data['shuffleWord'].toUpperCase();
@@ -236,9 +236,9 @@ define([
             length = shuffle.length;
             for(var i=0; i!=length; i++){
                 console.log(shuffle[i]);
-                $('.shuffle_string').append('<div class="letter letter-event">'+shuffle[i]+'</div>');
+                $('.string_shuffle').append('<div class="letter letter_event">'+shuffle[i]+'</div>');
             }
-            $('.shuffle_string').sortable({
+            $('.string_shuffle').sortable({
                 distance:10,
                 revert: true,
                 axis:'x'
@@ -320,7 +320,6 @@ define([
         startWebSocket: function(){
             ws = new WebSocket(this.urlFirstLevel);
             ws.onopen = function (event) {
-                
                 swal({
                     title: "Поиск соперника...",
                     text : '<center><div class="loading2"></div></center>',
@@ -332,7 +331,7 @@ define([
                         Backbone.history.navigate('lobby',true );
                     }
                 });
-                this.jumpingCup();
+                
             }.bind(this);
             ws.onmessage = function (event) {
                 console.log(event);
@@ -380,6 +379,8 @@ define([
                                 status = 'Вы проиграли!'
                             }
                         }
+                        if(data['best']){
+                        }
                         swal({
                             title: status,
                             text:  data['myName'] + ': ' + data['myScore'] + "<br>" + data['enemyName'] + ': ' + data['enemyScore'], 
@@ -387,14 +388,24 @@ define([
                             showConfirmButton: true,
                             html: true 
                         },function() {
-
-                            Backbone.history.navigate('lobby',true );
+                            if(!data['best']){
+                                Backbone.history.navigate('lobby',true );
+                            } else {
+                                //this.jumpingCup();
+                                swal({
+                                    title: 'Это ваш рекорд: ' + data['myScore'],
+                                    text: '<center><div id="container"></div></center>',  
+                                    showConfirmButton: true,
+                                    html: true 
+                                },function() {
+                                    Backbone.history.navigate('lobby',true );
+                                }.bind(this));
+                                
+                            }
                         }.bind(this));
+                        
                         break;
-
-
                 }
-                
             }.bind(this)
             ws.onerror = function(event){
                 console.log(event);

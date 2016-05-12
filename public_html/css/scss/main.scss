@@ -1,0 +1,37 @@
+@font-face{
+	font-family: Segoe Print; /* имя шрифта для CSS правил */
+	src: local("Segoe Print"), /* проверяем наличие шрифта в ОС пользователя */
+    url(../fonts/Segoe-Print.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+@font-face{
+	font-family: WhisperWrite; /* имя шрифта для CSS правил */
+	src: local("WhisperWrite"), /* проверяем наличие шрифта в ОС пользователя */
+    url(../fonts/WhisperWrite_Medium.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+@font-face{
+	font-family: a_AlbionicTitulInfl; /* имя шрифта для CSS правил */
+	src: local("a_AlbionicTitulInfl"), /* проверяем наличие шрифта в ОС пользователя */
+    url(../fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+@import "button";
+@import "body";
+@import "frame";
+@import "main-menu";
+@import "error";
+@import "image";
+@import "label";
+@import "users-header";
+@import "string";
+@import "record-list";
+@import "a";
+@import "lobby";
+@import "letter";
+@import "loading2";
+@import "question";
+@import "input";
+@import "table";
+@import "timer";
+@import "div-timer";
+@import "block-main";
+@import "main-form";
+@import "result";

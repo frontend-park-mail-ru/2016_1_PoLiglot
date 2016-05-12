@@ -1,337 +1,251 @@
-@font-face{
-	font-family: Segoe Print; /* имя шрифта для CSS правил */
-	src: local("Segoe Print"), /* проверяем наличие шрифта в ОС пользователя */
-    url(../fonts/Segoe-Print.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
-}
-@font-face{
-	font-family: WhisperWrite; /* имя шрифта для CSS правил */
-	src: local("WhisperWrite"), /* проверяем наличие шрифта в ОС пользователя */
-    url(../fonts/WhisperWrite_Medium.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
-}
-@font-face{
-	font-family: a_AlbionicTitulInfl; /* имя шрифта для CSS правил */
-	src: local("a_AlbionicTitulInfl"), /* проверяем наличие шрифта в ОС пользователя */
-    url(../fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
-}
-body{
-	padding-top:2%;
-	padding-bottom:2%;
-	background:url(../img/background-image.jpg);
-}
-hr{
-	color:red;
-}
-button{
-	height: 40px;
-	background-color: #8CD4F5;
-	color: white;
-	border-radius: 8px;
-	border:1px solid white;
-}
-button:active{
-	background-color: #0d98d9;
-}
-button:hover{
-	transition-property: all;
+@charset "UTF-8";
+@font-face {
+  font-family: Segoe Print;
+  /* имя шрифта для CSS правил */
+  src: local("Segoe Print"), url(../fonts/Segoe-Print.ttf);
+  /* если шрифт не установлен, тогда загружаем его по указанному пути */ }
+
+@font-face {
+  font-family: WhisperWrite;
+  /* имя шрифта для CSS правил */
+  src: local("WhisperWrite"), url(../fonts/WhisperWrite_Medium.ttf);
+  /* если шрифт не установлен, тогда загружаем его по указанному пути */ }
+
+@font-face {
+  font-family: a_AlbionicTitulInfl;
+  /* имя шрифта для CSS правил */
+  src: local("a_AlbionicTitulInfl"), url(../fonts/a_AlbionicTitulInfl_Bold.ttf);
+  /* если шрифт не установлен, тогда загружаем его по указанному пути */ }
+
+button {
+  font-family: Segoe Print;
+  height: 40px;
+  background-color: #8CD4F5;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid white; }
+  button:active {
+    background-color: #0d98d9; }
+  button:hover {
+    transition-property: all;
     transition-duration: 600ms;
     transition-timing-function: ease;
     transition-delay: initial;
-	background-color: #58c3f5;
-}
-.result{
-	text-align: center;
-	margin-top: 3%;
-	font-family: Segoe Print;
-	font-size: 30px;
-}
-.main-menu__h2{
-	color:black;
-	text-align: center;
-	font-weight: bold;
-	font-size: 80px;
-	font-family: WhisperWrite;
-}
-li{
-	text-align: center;
-	color:red;
-	width:100%;
-	cursor:pointer;
-	top: 50px;
-	font-size: 40px;
-	padding: 0px;
-	text-shadow: 1px 1px 2px black, 0 0 1em white;
-}
-.main-form__h2{
-	color:black;
-	text-align: center;
-	font-weight: bold;
-	font-size: 60px;
-	font-family: a_AlbionicTitulInfl;
-}
-.user_frame{
-	width: 30%;
-	border-radius: 4px;
-	float: left;
-	background-color: #ebf4fc;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	
-}
-.segoe_print_frame{
-	font-family: Segoe Print;
-	text-align: center;
-}
-.div_timer{
-	width: 40%;
-	float: left;
-	display: block;
+    background-color: #58c3f5; }
 
-}
-.versus_frame{
-	width: 30%;
-	border-radius: 4px;
-	float: right;
-	background-color: #ffe6e6;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.main-menu__button__text{
-	font-family: 'Boomboom';
-	font-size: 30px;
-}
-.record-list__table{
+.button_send {
+  font-family: Segoe Print;
+  width: 20%; }
 
-}
-.record-list__table__td__login{
-	font-family: Segoe Print;
-	font-size: 20px;
-	width: 77%;
-}
-.record-list__table__td__score{
-	font-family: Segoe Print;
-	font-size: 20px;
-}
-.record-list__table__td__login__header{
-	font-family: Segoe Print;
-	font-size: 20px;
-	width: 77%;
-	text-decoration: underline;
-}
-.record-list__table__td__score__header{
-	font-family: Segoe Print;
-	font-size: 20px;
-	text-decoration:underline;
-}
-input[type="text"]{
-	font-family: Segoe Print;
-}
-label{
-	font-family: Segoe Print;
-}
-.timer{
-	display: block;
-	margin: 0 auto;
-}
-.main-link{
-	
-}
-.main{
-	-webkit-user-select: none;
-	cursor: pointer;
-	box-shadow: 0 0 20px rgba(0,0,0,0.5);
-	background-color:#FFFFFF;
-	top: 10%;
-	padding-top: 2%;
-	padding-bottom: 2%;
-	padding-right: 5%;
-	padding-left: 5%;
-	border-radius: 4px;
-	border: 1px solid #DCDCDC;
-	display:none;
-		
-}
-.main-menu__button{
-	border-radius: 4px;
-	padding-top: 1%;
-	padding-bottom: 1%;
-	display: none;
-	margin-top:5%;
-	font-size: 30px;
-	color: white;
-	background-color: #8CD4F5;
-	font-family: a_AlbionicTitulInfl;
-	text-align: center;
-}
-.main-menu__button:hover{
-	transition-property: all;
+body {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: url(../img/background-image.jpg); }
+
+.frame_user {
+  width: 30%;
+  border-radius: 4px;
+  float: left;
+  background-color: #ebf4fc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.frame_segoe-print {
+  font-family: Segoe Print;
+  text-align: center; }
+
+.frame_versus {
+  width: 30%;
+  border-radius: 4px;
+  float: right;
+  background-color: #ffe6e6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.main-menu__h2 {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 80px;
+  font-family: WhisperWrite; }
+
+.main-menu__button {
+  border-radius: 4px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: none;
+  margin-top: 5%;
+  font-size: 30px;
+  color: white;
+  background-color: #8CD4F5;
+  font-family: a_AlbionicTitulInfl;
+  text-align: center; }
+  .main-menu__button:hover {
+    transition-property: all;
     transition-duration: 600ms;
     transition-timing-function: ease;
     transition-delay: initial;
-	background-color: #58c3f5;
-}
-.main-menu__button:active{
-	background-color: #0d98d9;
-}
-.form__button__forward{
-	font-family: Segoe Print;
-	float:right;
-}
-.main-form__submit{
-	font-family: Segoe Print;
-}
-.main-form__button{
-	font-family: Segoe Print;
-}
-.lobby__title{
-	font-family: a_AlbionicTitulInfl;
-	text-align:center;
-	font-size: 20px;
-	margin-top: 2%;
-}
-.record-list{
-	background-image: url(../img/blue-line.svg), url(../img/red-line.svg); 
-    background-size: 100vw 30px, 32px 32px;
-    background-repeat: repeat, repeat-y;
-    background-position: 0 0, 364px 0;
-    font: 200%/1.5 Bradley Hand, Segoe Script, cursive; 
-    margin-left: 0px; margin-right: 0px; 
-    border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-};
-.record_list__p{
-	font-size: 1.8em;
-	font-family: Segoe Print;
-} 
-.error{
-	display:none;
-}
+    background-color: #58c3f5; }
+  .main-menu__button:active {
+    background-color: #0d98d9; }
 
-.error-alert{
-	display: none;
-}
+.error {
+  display: none; }
+  .error-alert {
+    display: none; }
 
-.lobby{
-	display: none;
-}
+.image {
+  width: 100%;
+  margin: 0 auto; }
 
-.quit{
-	display: none;
-}
+label {
+  font-family: Segoe Print; }
 
-.send{
-	font-family: Segoe Print;
-	width: 20%;
-}
+.users-header {
+  margin: 0;
+  width: 100%; }
 
-.shuffle_main_row{
-	margin-top: 0;
-}
-.question_field{
-	margin: 0%;
-	width: 100%;
-}
-.answer_field_form{
-	margin-top: 15%;
-	margin-bottom: 0%;
-}
-.float-left{
-	float:left;
-}
-.float-right{
-	float: right;
-}
-.elem_align{
-	
-}
-.question_img{
-	margin-top: 0;
-	box-shadow: 0 0 20px rgba(0,0,0,0.5);
-	border-radius: 4px;
-	margin: 0 auto;
-	display: block;
-}
-.question_field{
-	margin-bottom: 1%;
-}
-.users_header{
-	margin: 0;
-	width: 100%;
-}
-.shuffle_string{
-	-webkit-user-select: none;
-	cursor: pointer;
-	border-radius: 4px;
-	border: 1px solid #DCDCDC;
-	margin-top: 2%;
-	margin-bottom: 2%;
-	margin-left: 5%;
-	margin-right: 5%;
-	padding-top: 1%;
-	padding-bottom: 1%;
-	width: auto;
-}
-.image{ 
-	width: 100%;
-	margin: 0 auto;
-}
-.letter{
-	-webkit-user-select: none;
-	display: inline-block;
-	cursor: pointer;
-	margin-right: 2%;
-	margin-left: 2%;
-	margin-bottom: 0%;
-	font-size: 30px;
-	text-align: center;
-	color: "snow";
-	width:40px;
-	height: 40px;
-	border-radius: 4px;
-	color: white;
-}
-.letter-event{
-	background:linear-gradient(to bottom, #4dff4d, #008000);
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.letter-event:active{
-	background:linear-gradient(to bottom, #004d00, #008000);
-	box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
-a{
+.string_shuffle {
+  -webkit-user-select: none;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #DCDCDC;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: auto; }
 
-	text-decoration: none;
-}
-a:visited {
-    color: black; /* Цвет посещенных ссылок */
-}
-a:active {
-	text-decoration: none;
-    color: black; /* Цвет активных ссылок */
-}
-a:hover{
-	text-decoration: none;
-}
-.page{
-}
+.record-list {
+  background-image: url(../img/blue-line.svg), url(../img/red-line.svg);
+  background-size: 100vw 30px, 32px 32px;
+  background-repeat: repeat, repeat-y;
+  background-position: 0 0, 364px 0;
+  font: 200%/1.5 Bradley Hand, Segoe Script, cursive;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
 
+a {
+  text-decoration: none; }
+  a:visited {
+    color: black; }
+  a:active {
+    text-decoration: none;
+    color: black; }
+  a:hover {
+    text-decoration: none; }
 
+.lobby {
+  display: none; }
+  .lobby__title {
+    font-family: a_AlbionicTitulInfl;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 2%; }
+
+.letter {
+  -webkit-user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 0%;
+  font-size: 30px;
+  text-align: center;
+  color: "snow";
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  color: white; }
+  .letter_event {
+    background: linear-gradient(to bottom, #4dff4d, #008000);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+    .letter_event:active {
+      background: linear-gradient(to bottom, #004d00, #008000);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 
 .loading2 {
   width: 100px;
   height: 100px;
-  border: 10px solid #ccffcc;  /* полупрозрачный цвет ставить не стоит, появляются ненужные линии */
+  border: 10px solid #ccffcc;
+  /* полупрозрачный цвет ставить не стоит, появляются ненужные линии */
   border-top-color: #8CD4F5;
   border-radius: 100%;
   -webkit-animation: loading2 linear 1.0s infinite;
-  animation: loading2 linear 1.0s infinite;
-}
+  animation: loading2 linear 1.0s infinite; }
+
 @-webkit-keyframes loading2 {
-  100% {-webkit-transform: rotate(360deg);}
-}
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
 @keyframes loading2 {
-  100% {transform: rotate(360deg);}
-}
+  100% {
+    transform: rotate(360deg); } }
 
+.question__img {
+  margin-top: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  margin: 0 auto;
+  display: block; }
 
+.question__field {
+  margin-bottom: 1%; }
 
+input[type="text"] {
+  font-family: Segoe Print; }
 
+.table__td_login {
+  font-family: Segoe Print;
+  font-size: 20px;
+  width: 77%; }
 
+.table__td_score {
+  font-family: Segoe Print;
+  font-size: 20px; }
 
+.timer {
+  display: block;
+  margin: 0 auto; }
+
+.div-timer {
+  width: 40%;
+  float: left;
+  display: block; }
+
+.main {
+  -webkit-user-select: none;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: #FFFFFF;
+  top: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-right: 5%;
+  padding-left: 5%;
+  border-radius: 4px;
+  border: 1px solid #DCDCDC;
+  display: none; }
+
+.main-form__h2 {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  font-family: a_AlbionicTitulInfl; }
+
+.main-form__button_forward {
+  font-family: Segoe Print;
+  float: right; }
+
+.result {
+  text-align: center;
+  margin-top: 3%;
+  font-family: Segoe Print;
+  font-size: 30px; }
+
+/*# sourceMappingURL=main.css.map */

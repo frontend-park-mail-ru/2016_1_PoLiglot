@@ -1,0 +1,15 @@
+.main-form{
+	&__h2{
+		color:black;
+		text-align: center;
+		font-weight: bold;
+		font-size: 60px;
+		font-family: a_AlbionicTitulInfl;
+	}
+	&__button{
+		&_forward{
+			font-family: Segoe Print;
+			float:right;
+		}
+	}
+}
