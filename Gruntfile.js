@@ -1,7 +1,19 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-
+        sass: {
+            dist: {
+                options: {
+                    update: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'public_html/css/scss/*.scss',
+                    dest: 'public_html/css/',
+                    ext: 'main.css'
+                }]
+            }
+        },
 		shell: {
 			dev:{
 				command:'node server.js'
@@ -18,6 +30,10 @@ module.exports = function (grunt) {
                     atBegin: true
                 }
             },
+            sass: {
+                files: ['public_html/css/scss/*.scss'],
+                tasks: ['sass']
+            },
             server: {
                 files: [
                     'public_html/js/**/*.js',
@@ -30,7 +46,16 @@ module.exports = function (grunt) {
 			// запуск watcher'a, который следит за изенениями файлов  templates/*.xml
 			// и если они изменяются, то запускает таск сборки шаблонов (grunt fest)
 		},
-		
+        sass: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    'public_html/css/main.css': 'public_html/css/scss/main.scss'
+                }
+            }
+        },
 		concurrent: {
 			tasks:['shell','watch']
 			// одновременный запуска shell'a и watcher'a https://www.npmjs.com/package/grunt-concurrent
@@ -67,8 +92,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-fest');
+    grunt.loadNpmTasks('grunt-sass');
 
     // результат команды grunt
+    grunt.registerTask('compile', ['sass']);
     grunt.registerTask('test', ['qunit:all']);
     grunt.registerTask('default', ['concurrent']);
 

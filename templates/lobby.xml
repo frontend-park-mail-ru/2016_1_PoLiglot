@@ -13,7 +13,7 @@
 			</button>
 		</a>
 		<a href="#game">
-			<button class=" form__button__forward"> Начать игру
+			<button class=" main-form__button_forward"> Начать игру
 				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 			</button>
 		</a>

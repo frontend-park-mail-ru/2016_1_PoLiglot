@@ -14,13 +14,15 @@
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-connect": "~0.6.0",
     "grunt-contrib-qunit": "^0.7.0",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-fest": "^0.1.6",
+    "grunt-sass": "^1.2.0",
     "grunt-shell": "^1.1.2"
   },
   "scripts": {
     "start": "node server",
-    "test" :"grunt test"
+    "test": "grunt test"
   },
   "dependencies": {
     "express-http-proxy": "^0.6.0",
