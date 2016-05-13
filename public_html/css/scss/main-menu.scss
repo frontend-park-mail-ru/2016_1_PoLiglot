@@ -1,0 +1,31 @@
+.main-menu{
+	&__h2{
+		color:black;
+		text-align: center;
+		font-weight: bold;
+		font-size: 80px;
+		font-family: WhisperWrite;
+	}
+	&__button{
+		border-radius: 4px;
+		padding-top: 1%;
+		padding-bottom: 1%;
+		display: none;
+		margin-top:5%;
+		font-size: 30px;
+		color: white;
+		background-color: #8CD4F5;
+		font-family: a_AlbionicTitulInfl;
+		text-align: center;
+		&:hover{
+			transition-property: all;
+    		transition-duration: 600ms;
+    		transition-timing-function: ease;
+    		transition-delay: initial;
+			background-color: #58c3f5;
+		}
+		&:active{
+			background-color: #0d98d9;
+		}
+	}
+}

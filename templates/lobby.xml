@@ -2,29 +2,18 @@
 	<div class="main ">
 		<div class="main-menu">
 			<div>
-				<p class="lobby__title">Поиск игры</p>
+				<p class="lobby__title">Правила игры</p>
 			</div>
-			<div id="fountainG">
-				<div id="fountainG_1" class="fountainG"></div>
-				<div id="fountainG_2" class="fountainG"></div>
-				<div id="fountainG_3" class="fountainG"></div>
-				<div id="fountainG_4" class="fountainG"></div>
-				<div id="fountainG_5" class="fountainG"></div>
-				<div id="fountainG_6" class="fountainG"></div>
-				<div id="fountainG_7" class="fountainG"></div>
-				<div id="fountainG_8" class="fountainG"></div>
-			</div>
-			<div class="js-result result"></div>
 			<div id="container"></div>
 		</div>
 		<hr/>
 		<a href="#">
-			<button class="btn btn-primary js-main-form__button main-form__button">
+			<button class=" js-main-form__button main-form__button">
 				<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Вернуться в меню
 			</button>
 		</a>
 		<a href="#game">
-			<button class="btn btn-primary form__button__forward"> Начать игру
+			<button class=" main-form__button_forward"> Начать игру
 				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 			</button>
 		</a>

@@ -1,5 +1,4 @@
 require.config({
-    urlArgs: "_=" + (new Date()).getTime(),
     baseUrl: "js",
     paths: {
         jquery: "lib/jquery-1.10.2",
@@ -22,7 +21,7 @@ require.config({
         },
         'sweetAlert':{
         	deps: ['jquery'],
-        	exports: 'sw'
+            exports: 'sw'
         },
         'konva': {
         	deps: ['jquery'],
@@ -39,5 +38,12 @@ require([
     Backbone,
     router
 ){
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('ServiceWorker.js').then(function(reg) {
+            console.log('Registration succeeded. Scope is ' + reg.scope);
+        }).catch(function(error) {
+            console.log('Registration failed with ' + error);
+        });
+    }
     Backbone.history.start();
 });

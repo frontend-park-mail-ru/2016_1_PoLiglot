@@ -1,0 +1,22 @@
+button{
+	font-family: Segoe Print;
+	height: 40px;
+	background-color: #8CD4F5;
+	color: white;
+	border-radius: 8px;
+	border:1px solid white;
+	&:active{
+		background-color: #0d98d9;
+	}
+	&:hover{
+		transition-property: all;
+	    transition-duration: 600ms;
+	    transition-timing-function: ease;
+	    transition-delay: initial;
+		background-color: #58c3f5;
+	}
+}
+.button_send{
+	font-family: Segoe Print;
+	width: 20%;
+}

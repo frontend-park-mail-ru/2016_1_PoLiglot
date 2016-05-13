@@ -6,20 +6,20 @@
 			<div class="record-list">
 				<table class="record-list__table">
 					<tr>
-						<td class="record-list__table__td__login__header">Логин игрока:</td>
-						<td class="record-list__table__td__score__header">Результат:</td>
+						<td class="table__td_login"><u>Логин игрока:</u></td>
+						<td class="table__td_score"><u>Результат:</u></td>
 					</tr>
 					<fest:each iterate="json.collection" index="i" value="player"> 
 					<tr>      
-						<td class="record-list__table__td__login"><fest:value output="text">player.name</fest:value></td>
-						<td class="record-list__table__td__score"><fest:value output="text">player.score</fest:value></td>
+						<td class="table__td_login"><fest:value output="text">player.name</fest:value></td>
+						<td class="table__td_score"><fest:value output="text">player.score</fest:value></td>
 					</tr>		
 					</fest:each>
 				</table> 
 			</div>
 			<hr/>
 			<a href="#">
-				<button class="btn btn-primary js-main-form__button main-form__button">
+				<button class="js-main-form__button main-form__button">
 					<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Назад
 				</button>
 			</a>

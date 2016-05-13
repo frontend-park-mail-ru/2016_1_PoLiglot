@@ -1,0 +1,23 @@
+.letter{
+	-webkit-user-select: none;
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 2%;
+	margin-left: 2%;
+	margin-bottom: 0%;
+	font-size: 30px;
+	text-align: center;
+	color: "snow";
+	width:40px;
+	height: 40px;
+	border-radius: 4px;
+	color: white;
+	&_event{
+		background:linear-gradient(to bottom, #4dff4d, #008000);
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		&:active{
+			background:linear-gradient(to bottom, #004d00, #008000);
+			box-shadow: 0 0 15px rgba(0,0,0,0.5);
+		}
+	}
+}

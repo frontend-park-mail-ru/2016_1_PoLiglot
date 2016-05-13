@@ -1,0 +1,13 @@
+.table{
+	&__td{
+		&_login{
+			font-family: Segoe Print;
+			font-size: 20px;
+			width: 77%;
+		}
+		&_score{
+			font-family: Segoe Print;
+			font-size: 20px;
+		}
+	}
+}

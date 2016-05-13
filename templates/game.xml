@@ -1,36 +1,38 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 	<div class="main ">
 		<div class="main-menu ">
-			<div class="users_header row">
-				<div class="col-md-2 user_frame">
-					<p class="segoe_print_frame">Вы:</p>
-					<p class="segoe_print_frame">Никнэйм:</p>
-					<p class="segoe_print_frame">Очки за игру:</p>
-					<p class="segoe_print_frame">Рэйтинг:</p>
+			<div class="users-header row">
+				<div class="frame_user">
+					<p class="frame_segoe-print">Вы:</p>
+					<h3 class="frame_segoe-print user"></h3>
+					<p class="frame_segoe-print">Очки за игру: <span class="frame_segoe-print myScore"></span></p>
+					<p class="frame_segoe-print ">Рекорд: <span class="frame_segoe-print  userRecord"></span></p>
 				</div>
-				<div class="col-md-5 div_timer">
-					<canvas id="timer" height="150" width="150" class="timer"></canvas>
+				<div class="div-timer">
+					<center>
+						<div id="timer"  class="timer"></div>
+					</center>
 				</div>
-				<div class="col-md-2 versus_frame">
-					<p class="segoe_print_frame">Соперник:</p>
-					<p class="segoe_print_frame">Никнэйм:</p>
-					<p class="segoe_print_frame">Очки за игру:</p>
-					<p class="segoe_print_frame">Рэйтинг:</p>
+				<div class="frame_versus">
+					<p class="frame_segoe-print">Соперник:</p>
+					<h3 class="frame_segoe-print enemy"></h3>
+					<p class="frame_segoe-print ">Очки за игру: <span class="frame_segoe-print enemyScore"></span></p>
+					<p class="frame_segoe-print">Рекорд: <span class="frame_segoe-print  enemyRecord"></span></p>
 				</div>
 			</div>
-			<div class="shuffle_main_row">
+			<div >
 				<center>
-				<div class="shuffle_string">
+				<div class="string_shuffle">
 
 				</div>
 				</center>
 			</div>
-			<div class="question_field row">
+			<div class="question__field ">
 				
 			</div>
-			<div class="row">
+			<div>
 				<center>
-				<button class=" btn btn-primary elem_align  row send">Ответить</button>
+				<button class="button_send">Ответить</button>
 				</center>
 	  		</div>
 		</div>

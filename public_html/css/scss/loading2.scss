@@ -1,0 +1,15 @@
+.loading2 {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #ccffcc;  /* полупрозрачный цвет ставить не стоит, появляются ненужные линии */
+  border-top-color: #8CD4F5;
+  border-radius: 100%;
+  -webkit-animation: loading2 linear 1.0s infinite;
+  animation: loading2 linear 1.0s infinite;
+}
+@-webkit-keyframes loading2 {
+  100% {-webkit-transform: rotate(360deg);}
+}
+@keyframes loading2 {
+  100% {transform: rotate(360deg);}
+}
