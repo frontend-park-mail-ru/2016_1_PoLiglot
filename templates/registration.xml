@@ -11,41 +11,42 @@
         <div class="js-error-alert js-pass-compare error-alert"><strong>Ой! </strong> Пароли не совпадают</div>
         <div class="js-error-alert js-403-status error-alert"><strong>Ой! </strong> Пользователь с таким email или именем уже существует</div>
         <div class="js-error-alert js-500-status error-alert"><strong>Ой! </strong> Кажется интернет пропал</div>
+        <div class="js-error-alert js-0-status error-alert"><strong>Ой! </strong>Регистрация недоступна так как отсутуствует интернет</div>
       </div> 
       <form class="form-horizontal form" action="" >
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">E-mail:</label>
+            <label for="inputEmail3" class="col-sm-2 control-label main-form__label">E-mail:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="ivanov@ivan.ru" name="email"/>
+                <input type="text" class="form-control input-text_segoe-print" id="inputEmail3" placeholder="ivanov@ivan.ru" name="email"/>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Логин:</label>
+            <label for="inputEmail3" class="col-sm-2 control-label main-form__label">Логин:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="superEnglishMan123" name="login"/>
+                <input type="text" class="form-control input-text_segoe-print" id="inputEmail3" placeholder="superEnglishMan123" name="login"/>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Пароль:</label>
+            <label for="inputPassword3" class="col-sm-2 control-label main-form__label">Пароль:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="**********" name="password"/>
+                <input type="password" class="form-control input-text_segoe-print" id="inputPassword3" placeholder="**********" name="password"/>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Повторить:</label>
+            <label for="inputPassword3" class="col-sm-2 control- main-form__label">Повторить:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="**********" name="password_repeat"/>
+                <input type="password" class="form-control input-text_segoe-print" id="inputPassword3" placeholder="**********" name="password_repeat"/>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="main-form__submit">Войти</button>
+                <button type="submit" class="main-form__submit button">Войти</button>
             </div>
           </div>
       </form>
       <hr/>
       <a href="#">
-        <button class=" js-main-form__button main-form__button">
+        <button class=" js-main-form__button main-form__button button">
           <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Назад
         </button>
       </a>

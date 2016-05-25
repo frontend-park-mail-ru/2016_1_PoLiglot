@@ -8,12 +8,12 @@
 		</div>
 		<hr/>
 		<a href="#">
-			<button class=" js-main-form__button main-form__button">
+			<button class=" js-main-form__button main-form__button button">
 				<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Вернуться в меню
 			</button>
 		</a>
 		<a href="#game">
-			<button class=" main-form__button_forward"> Начать игру
+			<button class=" main-form__button_forward button"> Начать игру
 				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 			</button>
 		</a>

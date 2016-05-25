@@ -29,9 +29,7 @@ define([
             return this;
         },
         show: function () {
-            this.$el.appendTo("#page");
             this.$el.show();
-
             this.$('.main').fadeIn("slow");
             this.trigger("show",this);
             

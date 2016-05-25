@@ -26,7 +26,7 @@ app.listen(PORT, function () {
 
 
 
-app.use('/api', proxy('http://localhost:8081/', {
+app.use('/api', proxy('http://localhost:8080/', {
 	forwardPath: function (req, res) {
         var url = '/api' + require('url').parse(req.url).path;
         console.log('Proxy: ' + url);

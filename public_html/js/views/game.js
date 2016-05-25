@@ -27,191 +27,197 @@ define([
         },
         startTimer:function(){
 
-        var stage = new Konva.Stage({
-            container: 'timer',  // индификатор div контейнера
-            width: 150,
-            height: 160,
-        });
-        
-        var layer = new Konva.Layer();
-        var center_y = stage.height() / 2;
-        var center_x = stage.width() / 2;
+            var stage = new Konva.Stage({
+                container: 'timer',  // индификатор div контейнера
+                width: 150,
+                height: 160,
+            });
+            
+            var layer = new Konva.Layer();
+            var center_y = stage.height() / 2;
+            var center_x = stage.width() / 2;
 
-        var mech = new Konva.Rect({
-            x:0,
-            y: -70,
-            width: 10,
-            height: 25,
-            fill: 'red',
-            offset : {
-                x: -70,
-                y: -90
-            }
-        });
-        mech.fillLinearGradientColorStops(0, 'red', 0.5, 'blue', 1, 'green');
-        layer.add(mech);
+            var mech = new Konva.Rect({
+                x:0,
+                y: -70,
+                width: 10,
+                height: 25,
+                fill: 'red',
+                offset : {
+                    x: -70,
+                    y: -90
+                }
+            });
+            mech.fillLinearGradientColorStops(0, 'red', 0.5, 'blue', 1, 'green');
+            layer.add(mech);
 
-        var mech2 = new Konva.Rect({
-            x:0,
-            y: -80,
-            width: 26,
-            height: 10,
-            fill: 'red',
-            offset : {
-                x: -62,
-                y: -95
-            }
-        });
-        layer.add(mech2);
-
-
-        var mech3 = new Konva.Rect({
-            x: 34,
-            y: 44,
-            width: 10,
-            height: 25,
-            fill: 'red'
-        });
-        mech3.rotate(45);
-        layer.add(mech3);
-
-        var mech4 = new Konva.Rect({
-            x: 30,
-            y: 50,
-            width: 26,
-            height: 10,
-            fill: 'red',
-        });
-        mech4.rotate(45);
-        layer.add(mech4);
+            var mech2 = new Konva.Rect({
+                x:0,
+                y: -80,
+                width: 26,
+                height: 10,
+                fill: 'red',
+                offset : {
+                    x: -62,
+                    y: -95
+                }
+            });
+            layer.add(mech2);
 
 
-        var mech5 = new Konva.Rect({
-            x: 109,
-            y: 52,
-            width: 10,
-            height: 25,
-            fill: 'red'
-        });
-        mech5.rotate(315);
-        layer.add(mech5);
+            var mech3 = new Konva.Rect({
+                x: 34,
+                y: 44,
+                width: 10,
+                height: 25,
+                fill: 'red'
+            });
+            mech3.rotate(45);
+            layer.add(mech3);
 
-        var mech6 = new Konva.Rect({
-            x: 100,
-            y: 70,
-            width: 26,
-            height: 10,
-            fill: 'red',
-        });
-        mech6.rotate(315);
-        layer.add(mech6);
+            var mech4 = new Konva.Rect({
+                x: 30,
+                y: 50,
+                width: 26,
+                height: 10,
+                fill: 'red',
+            });
+            mech4.rotate(45);
+            layer.add(mech4);
 
-        
 
-        var circle1 = new Konva.Circle({
-            x: stage.width() / 2,
-            y: 100,
-            radius: 52,
-            fill: 'white',
-            stroke: '#265a88',
-            strokeWidth: 8
-        });
-        layer.add(circle1);
+            var mech5 = new Konva.Rect({
+                x: 109,
+                y: 52,
+                width: 10,
+                height: 25,
+                fill: 'red'
+            });
+            mech5.rotate(315);
+            layer.add(mech5);
 
-        var arc = new Konva.Arc({
-            x: stage.getWidth() / 2,
-            y: stage.getHeight() / 2,
-            innerRadius: 33,
-            outerRadius: 41,
-            //angle: 90,
-            rotation:180,
-            fill: 'red',
-        });
-        layer.add(arc);
+            var mech6 = new Konva.Rect({
+                x: 100,
+                y: 70,
+                width: 26,
+                height: 10,
+                fill: 'red',
+            });
+            mech6.rotate(315);
+            layer.add(mech6);
 
-        var divs = [12]; 
-           
-        
-        for(var i=0;i!=12; i++){
-            var grad = i *30;
-            if( i == 0 || i == 3 || i ==6 || i==9){
-                divs[i] = new Konva.Line({
-                    points: [34, 0, 44, 0],
-                    stroke: 'black',
-                    strokeWidth: 2,
-                    lineCap: 'round',
-                    lineJoin: 'round',
+            
+
+            var circle1 = new Konva.Circle({
+                x: stage.width() / 2,
+                y: 100,
+                radius: 52,
+                fill: 'white',
+                stroke: '#265a88',
+                strokeWidth: 8
+            });
+            layer.add(circle1);
+
+            var arc = new Konva.Arc({
+                x: stage.getWidth() / 2,
+                y: stage.getHeight() / 2,
+                innerRadius: 33,
+                outerRadius: 41,
+                //angle: 90,
+                rotation:180,
+                fill: 'red',
+            });
+            layer.add(arc);
+
+            var divs = [12]; 
+               
+            
+            for(var i=0;i!=12; i++){
+                var grad = i *30;
+                if( i == 0 || i == 3 || i ==6 || i==9){
+                    divs[i] = new Konva.Line({
+                        points: [34, 0, 44, 0],
+                        stroke: 'black',
+                        strokeWidth: 2,
+                        lineCap: 'round',
+                        lineJoin: 'round',
+                    });
+                } else {
+                    divs[i] = new Konva.Line({
+                        points: [34, 0, 40, 0],
+                        stroke: 'black',
+                        strokeWidth: 2,
+                        lineCap: 'butt',
+                        lineJoin: 'round',
+                    });
+                }
+                divs[i].move({
+                    x:center_x,
+                    y:100
                 });
-            } else {
-                divs[i] = new Konva.Line({
-                    points: [34, 0, 40, 0],
-                    stroke: 'black',
-                    strokeWidth: 2,
-                    lineCap: 'butt',
-                    lineJoin: 'round',
-                });
+                divs[i].rotate(grad);
+                layer.add(divs[i]);
             }
-            divs[i].move({
+
+            redLine = new Konva.Line({
+                points: [0, -30, 0, 0],
+                stroke: 'red',
+                strokeWidth: 2,
+                lineCap: 'round',
+                lineJoin: 'round',
+            });
+
+            redLine.move({
                 x:center_x,
                 y:100
             });
-            divs[i].rotate(grad);
-            layer.add(divs[i]);
-        }
 
-        redLine = new Konva.Line({
-            points: [0, -30, 0, 0],
-            stroke: 'red',
-            strokeWidth: 2,
-            lineCap: 'round',
-            lineJoin: 'round',
-        });
+            layer.add(redLine);
 
-        redLine.move({
-            x:center_x,
-            y:100
-        });
+            var ring = new Konva.Ring({
+                x: 0,
+                y: -80,
+                innerRadius: 16,
+                outerRadius: 20,
+                fill:'red',
+                offset : {
+                    x: -75,
+                    y: -100
+                }
+            });
+            layer.add(ring);
 
-        layer.add(redLine);
+            
 
-        var ring = new Konva.Ring({
-            x: 0,
-            y: -80,
-            innerRadius: 16,
-            outerRadius: 20,
-            fill:'red',
-            offset : {
-                x: -75,
-                y: -100
-            }
-        });
-        layer.add(ring);
+            stage.add(layer);
+            var angularSpeed = 6;
+            anim = new Konva.Animation(function(frame) {
+                var angleDiff = frame.timeDiff * angularSpeed / 1000;
+                redLine.rotate(angleDiff);
+                arc.angle(angleDiff);
+                arc.rotate(angleDiff);
+            }, layer);
 
-        
-
-        stage.add(layer);
-        var angularSpeed = 6;
-        anim = new Konva.Animation(function(frame) {
-            var angleDiff = frame.timeDiff * angularSpeed / 1000;
-            redLine.rotate(angleDiff);
-            arc.angle(angleDiff);
-            arc.rotate(angleDiff);
-        }, layer);
-
-        anim.start();
-        setTimeout(function(){
-                anim.stop();
-            },60000);
+            anim.start();
+            setTimeout(function(){
+                    anim.stop();
+                },60000);
         },
-        loseSound:function(){
+        sound:function(sound_event){
             var audio = new Audio(); 
-            audio.src = '../../sounds/sound_lose.mp3'; 
+            switch(sound_event){
+                case 'lose':
+                    audio.src = '../../sounds/sound_lose.mp3';
+                    break;
+                case 'begin':
+                    audio.src = '../../sounds/sound_begin.mp3'; 
+                    break;
+                case 'win':
+                    audio.src = '../../sounds/sound_win.mp3';
+                    break;
+            }
             audio.autoplay = true;
-        },
-        beginSound:function(){
-            var audio = new Audio(); // Создаём новый элемент Audio
-            audio.src = '../../sounds/sound_begin.mp3'; // Указываем путь к звуку "клика"
-            audio.autoplay = true; // Автоматически запускаем 
+            delete audio;  
         },
         parseQuestion:function() {
             ws.send("{\"action\":\"getWord\"}");
@@ -276,7 +282,6 @@ define([
             $('.enemyScore').text('');
         },
         show: function () {
-            this.$el.appendTo("#page");
             this.$el.show();
             this.trigger("show", this);
             this.startWebSocket();
@@ -350,7 +355,7 @@ define([
                         $('.alert_title').text('Игра начнётся через 3 секунды');
                         setTimeout(function(){
                             swal.close();
-                            this.beginSound();
+                            this.sound("begin");
                             this.showScreen(data);
                             this.parseQuestion();
                             this.startTimer();
@@ -371,86 +376,42 @@ define([
                         var status;
                         if(data['equality']){
                             status = 'Ничья';
+                            image = '../../../img/equality.png';
+                            sound = 'equality'
                         } else {
                             if(data['win']==true){
                                 status = 'Вы выиграли!';
+                                image = '../../../img/cup.png';
+                                sound = 'win';
+
 
                             } else {
-                                status = 'Вы проиграли!'
+                                status = 'Вы проиграли!';
+                                image = '../../../img/lose.png';
+                                sound = 'lose';
                             }
                         }
                         if(data['best']){
+                            data['myScore'] = data['myScore'] + ' РЕКОРД';
                         }
+                        this.sound(sound);
                         swal({
                             title: status,
-                            text:  data['myName'] + ': ' + data['myScore'] + "<br>" + data['enemyName'] + ': ' + data['enemyScore'], 
-                            type: 'success',  
+                            imageUrl: image,
+                            text:  '<h3>' + data['myName'] + ': ' + data['myScore'] + "</h3><h3>" + data['enemyName'] + ': ' + data['enemyScore'] + '</h3>', 
                             showConfirmButton: true,
                             html: true 
                         },function() {
-                            if(!data['best']){
-                                Backbone.history.navigate('lobby',true );
-                            } else {
-                                //this.jumpingCup();
-                                swal({
-                                    title: 'Это ваш рекорд: ' + data['myScore'],
-                                    text: '<center><div id="container"></div></center>',  
-                                    showConfirmButton: true,
-                                    html: true 
-                                },function() {
-                                    Backbone.history.navigate('lobby',true );
-                                }.bind(this));
-                                
-                            }
-                        }.bind(this));
-                        
+                            Backbone.history.navigate('lobby',true );
+                        });
                         break;
                 }
             }.bind(this)
-            ws.onerror = function(event){
+            ws.onerror = function(event) {
                 console.log(event);
-
             }
         },
-        jumpingCup: function() {
-            var width = $('#container').innerWidth();
-            
-            console.log(width);
-            var stage = new Konva.Stage({
-                container: 'container',
-                width: width,
-                height: 150
-            });
-
-            var layer = new Konva.Layer();
-    
-            var cupImg = new Konva.Image({
-                x: (stage.getWidth()/2 - 50),
-                y: (stage.getHeight()/2),
-                width: 100,
-                height: 100,
-                draggable: true,
-            });
-            layer.add(cupImg);
-            stage.add(layer);
-
-            var imageObj1 = new Image();
-            imageObj1.onload = function() {
-                cupImg.image(imageObj1);
-                layer.draw();
-            };
-            imageObj1.src = '../../../img/cup.png';
-
-            var amplitude = 10;
-            var period = 500;
-            var centerY = stage.getHeight() / 2 -50;
-
-            var anim = new Konva.Animation(function(frame) {
-                cupImg.setY(amplitude * Math.sin(frame.time * 2 * Math.PI / period) + centerY);
-            }, layer);
-
-            anim.start();
-        },
+        
         post: function(event) {
             var right = "";
             if(event){

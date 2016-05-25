@@ -1,19 +1,22 @@
-.frame_user{
-	width: 30%;
-	border-radius: 4px;
-	float: left;
-	background-color: #ebf4fc;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	
-}
-.frame_segoe-print{
-	font-family: Segoe Print;
-	text-align: center;
-}
-.frame_versus{
-	width: 30%;
-	border-radius: 4px;
-	float: right;
-	background-color: #ffe6e6;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.frame{
+	margin: 0;
+	width: 100%;
+	&__user{
+		width: 30%;
+		border-radius: 4px;
+		float: left;
+		background-color: #ebf4fc;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}
+	&_segoe-print{
+		font-family: Segoe Print;
+		text-align: center;
+	}
+	&__versus{
+		width: 30%;
+		border-radius: 4px;
+		float: right;
+		background-color: #ffe6e6;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}
 }

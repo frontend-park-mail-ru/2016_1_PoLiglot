@@ -20,11 +20,17 @@ define(function (require) {
 
             initialize: function () {
                 viewManager.addView(mainView);
+                mainView.$el.appendTo("#page");
                 viewManager.addView(loginView);
+                loginView.$el.appendTo("#page");
                 viewManager.addView(registerView);
+                registerView.$el.appendTo("#page");
                 viewManager.addView(scoreboardView);
+                scoreboardView.$el.appendTo("#page");
                 viewManager.addView(gameView);
+                gameView.$el.appendTo("#page");
                 viewManager.addView(lobbyView);
+                lobbyView.$el.appendTo("#page");
             },
             loginAction: function () {
                 loginView.show();

@@ -7,15 +7,15 @@ define([
     var GameModel = Backbone.Model.extend({
         urlFirstLevel: "",
         urlBingApi: 'https://bingapis.azure-api.net/api/v5/images/search',
-
-        
+         
         getPicture: function(word) {
             return this.save({}, {
                 type: 'GET',
                 wait: true,
                 url: this.urlBingApi,
+                mode: 'no-cors',
                 headers: {
-                    "Ocp-Apim-Subscription-Key":"5f3c7707140c4e2ba3ade31b9ed94e33"
+                    "Ocp-Apim-Subscription-Key":"dacd8c7839df47f7800e17466ee5f260"
                 },
                 data: 'q='+word+'&count=10&offset=0&mkt=en-us&safeSearch=Moderate&height=200&width=200',
             });    

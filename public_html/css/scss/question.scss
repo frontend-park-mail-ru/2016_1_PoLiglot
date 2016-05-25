@@ -1,7 +1,7 @@
 .question{
+	margin-bottom: 1%;
 	&__img{
 		margin-top: 0;
-		box-shadow: 0 0 20px rgba(0,0,0,0.5);
 		height:200px;
 		width:200px;
 		border-radius: 4px;
@@ -9,6 +9,12 @@
 		display: block;
 	}
 	&__field{
-		margin-bottom: 1%;
+		margin-top: 0;
+		box-shadow: 0 0 20px rgba(0,0,0,0.5);
+		height:200px;
+		width:200px;
+		border-radius: 4px;
+		margin: 0 auto;
+		display: block;
 	}
 }

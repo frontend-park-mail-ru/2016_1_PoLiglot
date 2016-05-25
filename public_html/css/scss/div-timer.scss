@@ -1,4 +1,8 @@
 .div-timer{
+	&__timer{
+		display: block;
+		margin: 0 auto;
+	}
 	width: 40%;
 	float: left;
 	display: block;
