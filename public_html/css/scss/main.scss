@@ -13,24 +13,37 @@
 	src: local("a_AlbionicTitulInfl"), /* проверяем наличие шрифта в ОС пользователя */
     url(../fonts/a_AlbionicTitulInfl_Bold.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
+body{
+	padding-top:2%;
+	padding-bottom:2%;
+	background:url(../img/background-image.jpg);
+}
+a{
+	text-decoration: none;
+	&:visited {
+	    color: black; 
+	}
+	&:active {
+		text-decoration: none;
+	    color: black; 
+	}
+	&:hover{
+		text-decoration: none;
+	}
+}
 @import "button";
-@import "body";
 @import "frame";
 @import "main-menu";
 @import "error";
 @import "image";
-@import "label";
-@import "users-header";
 @import "string";
 @import "record-list";
-@import "a";
 @import "lobby";
 @import "letter";
 @import "loading2";
 @import "question";
 @import "input";
 @import "table";
-@import "timer";
 @import "div-timer";
 @import "block-main";
 @import "main-form";

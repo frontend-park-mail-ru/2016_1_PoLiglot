@@ -1,4 +1,4 @@
-button{
+.button{
 	font-family: Segoe Print;
 	height: 40px;
 	background-color: #8CD4F5;
@@ -15,8 +15,8 @@ button{
 	    transition-delay: initial;
 		background-color: #58c3f5;
 	}
-}
-.button_send{
-	font-family: Segoe Print;
-	width: 20%;
+	&_send{
+		font-family: Segoe Print;
+		width: 20%;
+	}
 }

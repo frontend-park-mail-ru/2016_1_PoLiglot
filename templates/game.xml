@@ -1,8 +1,8 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
 	<div class="main ">
 		<div class="main-menu ">
-			<div class="users-header row">
-				<div class="frame_user">
+			<div class="frame row">
+				<div class="frame__user">
 					<p class="frame_segoe-print">Вы:</p>
 					<h3 class="frame_segoe-print user"></h3>
 					<p class="frame_segoe-print">Очки за игру: <span class="frame_segoe-print myScore"></span></p>
@@ -10,29 +10,31 @@
 				</div>
 				<div class="div-timer">
 					<center>
-						<div id="timer"  class="timer"></div>
+						<div id="timer"  class="div-timer__timer"></div>
 					</center>
 				</div>
-				<div class="frame_versus">
+				<div class="frame__versus">
 					<p class="frame_segoe-print">Соперник:</p>
 					<h3 class="frame_segoe-print enemy"></h3>
 					<p class="frame_segoe-print ">Очки за игру: <span class="frame_segoe-print enemyScore"></span></p>
 					<p class="frame_segoe-print">Рекорд: <span class="frame_segoe-print  enemyRecord"></span></p>
 				</div>
 			</div>
-			<div >
+			<div class="string">
 				<center>
 				<div class="string_shuffle">
-
 				</div>
 				</center>
 			</div>
-			<div class="question__field ">
-				
+			<div class="question">
+				<center>
+				<div class="question__field">
+				</div>
+				</center>
 			</div>
 			<div>
 				<center>
-				<button class="button_send">Ответить</button>
+				<button class="button_send button">Ответить</button>
 				</center>
 	  		</div>
 		</div>

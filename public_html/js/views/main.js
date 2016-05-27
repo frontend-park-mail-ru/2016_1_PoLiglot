@@ -15,14 +15,6 @@ define([
         },
         template: tmpl,
         initialize: function() {
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/js/ServiceWorker.js').then(function(reg) {
-                console.log('Registration succeeded. Scope is ' + reg.scope);
-            }).catch(function(error) {
-            console.log('Registration failed with ' + error);
-            });
-            }
-
             this.off();
             this.render();
         },
@@ -63,10 +55,8 @@ define([
         },
         show: function () {
             console.log("show");
-            this.$el.appendTo("#page");
             this.$el.show();
             this.checkLogin();
-            //$('#page').html(this.render().$el);
             this.$('.main').fadeIn("fast");
             this.trigger("show",this);
             

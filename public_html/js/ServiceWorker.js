@@ -1,4 +1,4 @@
-var CACHE = 'v3';
+/*var CACHE = 'v3';
 this.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(CACHE).then(function(cache) {
@@ -6,7 +6,6 @@ this.addEventListener('install', function(event) {
                 '/index.html',
                 '/css/main.css',
                 '/js/views/main.js',
-                '/templates/main.xml',
                 '/js/tmpl/main.js',
                 '/js/router.js',
                 '/js/lib/require.js',
@@ -43,4 +42,4 @@ this.addEventListener('activate', function(event) {
             }));
         })
     );
-});
+});*/
